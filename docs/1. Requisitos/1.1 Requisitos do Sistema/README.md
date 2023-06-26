@@ -175,17 +175,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Não possui saídas.                                                       |
 | **Pós-condições:** O usuário é redirecionado para a tela da requisição selecionada. |
 
-| RF 014 - Receber alerta após mudança de status de uma requisição                                               |
-| -------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** O usuário deve receber um alerta via e-mail após haver uma mudança no status da requisição.     |
-| **Atores:** Discente.                                                                                             |
-| **Prioridade:** Alta.                                                                                          |
-| **Entrada:** Não possui entradas.                                                                              |
-| **Pré-condições:** Quando o status de uma requisição associada a um determinado aluno for alterada.            |
-| **Saída:** Não possui saídas.                                                                                  |
-| **Pós-condições:** O usuário recebe um e-mail com as informações daquela requisição e o seu respectivo status. |
-
-| RF 015 - Baixar arquivo PDF referente à requisição                                                       |
+| RF 014 - Baixar arquivo PDF referente à requisição                                                       |
 | -------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ter a opção de fazer o download da requisição em formato PDF.              |
 | **Atores:** Discente.                                                                                       |
@@ -195,7 +185,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Confirmação do download do arquivo.                                                           |
 | **Pós-condições:** O usuário vê o arquivo baixado na pasta selecionada.                                  |
 
-| RF 016 - Visualizar indicadores sobre as requisições enviadas |
+| RF 015 - Visualizar indicadores sobre as requisições enviadas |
 | ------------------------------------------------------------- |
 | **Descrição:** Em construção.                                 |
 | **Atores:** Discente.                                            |
@@ -205,7 +195,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Em construção.                                     |
 | **Pós-condições:** Em construção.                             |
 
-| RF 017 - Criar rascunhos de requisições |
+| RF 016 - Criar rascunhos de requisições |
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve ter o poder de salvar as informações de uma solicitação, junto de documentos anexos, que ainda possa estar incompleta. Nesse caso, é feito um rascunho da requisição que será encaminhado para a coordenação somente após o usuário solicitá-lo.                                 |
 | **Atores:** Discente.                                            |
@@ -215,7 +205,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Confirmação de requisição em rascunho.                                     |
 | **Pós-condições:** O usuário é redirecionado para a dashboard atualizada com a fila de rascunhos.                             |
 
-| RF 018 - Deletar rascunhos de requisições |
+| RF 017 - Deletar rascunhos de requisições |
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve poder apagar um rascunho de requisição caso ache necessário.                                 |
 | **Atores:** Discente.                                            |
@@ -225,7 +215,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Rascunho apagado.                                     |
 | **Pós-condições:** Em construção.                             |
 
-| RF 019 - Alterar rascunhos de requisições  |
+| RF 018 - Alterar rascunhos de requisições  |
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve poder alterar dados de uma requisição em situação de rascunho quando achar necessário.                                 |
 | **Atores:** Discente.                                            |
@@ -235,7 +225,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Em construção.                                     |
 | **Pós-condições:** Em construção.                             |
 
-| RF 020 - Enviar solicitação à coordenação|
+| RF 019 - Enviar solicitação à coordenação|
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve poder fazer o envio da solicitação completa criada anteriormente para o próximo ator do fluxo dentro do sistema.                                 |
 | **Atores:** Discente.                                            |
@@ -245,7 +235,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Em construção.                                     |
 | **Pós-condições:** Em construção.                             |
 
-| RF 021 - Alterar solicitação|
+| RF 020 - Alterar solicitação|
 | ------------------------------------------------------------- |
 | **Descrição:** U usuário deve poder alterar dados de uma solicitação já enviada caso esta não tenha alcançado uma fase muito avançada da requisição.                                 |
 | **Atores:** Discente.                                            |
@@ -255,7 +245,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Em construção.                                     |
 | **Pós-condições:** Em construção.                             |
 
-| RF 022 - Visualizar dados do discente|
+| RF 021 - Visualizar dados do discente|
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve ter acesso em parte especificada no sistema a um quantitativo de horas cumpridas, junto de poder conferir um extrato de horas.                                 |
 | **Atores:** Discente.                                            |
@@ -265,7 +255,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Em construção.                                     |
 | **Pós-condições:** Em construção.                             |
 
-| RF 023 - Visualizar fluxo de requisição|
+| RF 022 - Visualizar fluxo de requisição|
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve, caso tenha requisições enviadas, poder conferir o andamento de seu requerimento, com uma análise de trânsito visível e atualizada.                                 |
 | **Atores:** Discente.                                            |
@@ -275,7 +265,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Em construção.                                     |
 | **Pós-condições:** Em construção.                             |
 
-| RF 024 - Dashboard do Discente|
+| RF 023 - Dashboard do Discente|
 | ------------------------------------------------------------- |
 | **Descrição:** Em construção.                                 |
 | **Atores:** Discente.                                            |
@@ -284,7 +274,6 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Pré-condições:** Em construção.                             |
 | **Saída:** Em construção.                                     |
 | **Pós-condições:** Em construção.                             |
-
 ---
 
 ## Requisitos não funcionais
