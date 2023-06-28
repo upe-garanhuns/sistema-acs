@@ -1,6 +1,6 @@
 # 2.3 Componente - C3
 
-`/2. Níveis/2.3 Componente - C3`
+`\2. Níveis\2.3 Componente - C3`
 
 * [Sistema ACS | Docs](../../README.md)
   * [1. Requisitos](../../1.%20Requisitos/README.md)

@@ -1,6 +1,6 @@
 # 2.4.2-Classes
 
-`/2. Níveis/2.4 Código - C4/2.4.2-Classes`
+`\2. Níveis\2.4 Código - C4\2.4.2-Classes`
 
 * [Sistema ACS | Docs](../../../README.md)
   * [1. Requisitos](../../../1.%20Requisitos/README.md)
@@ -24,7 +24,7 @@
 
 ---
 
-![diagram](https://www.plantuml.com/plantuml/svg/0/hLTBJnin4BxpAonEVOX8lQuG9GffLObMg9HU48U9FG6NNJlOisaGvR_NNlRbNMysQSaXiMV6u_4tus-SKqjWACzInbEm5kq1SvzYpAOarrA0G7Pz_GlMa2pC95_X1BYT29r99VMajhcvOK_5MlyvaY9XvrhTDXAK6vsmkVkUgpnhv08jDvA3KrwIaUqb_EuhR6G62PEA2l7pGIky6HgIIxTKw7BhKjt4VNHqmWxV7GQc2UFDpBw6lrkabi2-UJlWT1Z5bjKOZYGfJoDWRS5H03aCpu2maTrf0xO1TW3lKln34wHTQHDomXQFXDSt_HHznuTSMXzLY6WRbGBJ3uTjsuIPUXAjnr5dZMd2e1g_Hc0kryqyoFG_HkSSrjEmSd9ZjzQCruzLYz8P1WMnMtgAhQjYZoP61qnnPNCmSgkNoYHX-Sl8_byWhKIuM0BavagWGRuDlCfa33-Eg_vzCZdqXGkGniH8hCXiNtxrgIzpn8ZUHvJkeXZNHzq9vdrTE8pBIGXmAn7343T6Oo37-CbYXfOCTbZdWKIRQZjQqlUe8lcg8vaQDrhhgRLIWO20k5ws9Q3SDg6tcUYoqDNTQpmvBPYgczzBJ-_2ZtbuiN9DpF_kqhswFdPkXtk5utkW7musl_rYsjPIzyUwgUEee-4QBYt20dxoHIBvCxDe9AG_qLYfrTMNiuIbGLt7wNYcirMA5AEArR8lNBbDjD3TIiSKbrf5U0Kpa6bVR57THLYBQo5ljJj2WNJqzR0kbKMVrpf5K45qIx_THV4RlEpU-ywMatjeI9AUeHCsqscAd1nQnnyPRWYLiEop0KKeAjF7ay33XKlKRss4Nzw9x7sHLZGACeoffProhdD5txIQRrRIOE6bUuR0xbpp-q6pcVE0YbpExQZBkO95sjS6f54pRr39LLLMPLnR9GpBuVPRsdKmn1X3JJTOlrl_t_iaBdNLBFBesUauKSQ9dCb_Zvyh-fnmLyxLDN1alixEaDpLie7ZjlpupsHIRN9mwdBb_bNz1G00)
+![diagram](https://www.plantuml.com/plantuml/svg/0/hLTHJzim47v7uZzOVTg6gBJN236gqasJs8J6s0lYuMfVmIEnYttfYXZ_VNRQ94xgjA6Z3yI-krpklZj_PyuiWQ4yInbFmLgqXmVC_OeD6v5SI042sStDRrX0CZN3V8v3u7OeT2QLrCFAvlQMFQzUzhzZAH9seTLT84Avr0cRkByJbMU1Gg3bHd9msYioil4Il_y6Ivb1mgIYbVpby22CSeo6vCozBdGPGMLHPt1yVCe67mODwuJnUcVVokSTKY2mxzvtEUu6DR3Q3Ij9ojCOTDjW5K0EqdCW38Jtse0DWEugm5h-KnEa6-8wz8HDdmXlRgDL-u6FkRG-kWs0GumAY3yEGlE4cMeJxzO-3clhX46vVgi0NGlK-sO3x1-bSrfjMqsL6xkrdRn-ToCfdM6pLLvHioA4ya14gwMRv79jSp1obwVIAc7vQcN_Fw2WEYwc9fGJ9T0WtuPcQR8RK8xpoD4pEKIaKv36H0cmA7X4SVqv8dJ4YjvD5rbseLxbtG_uFTmurDUR5kH1RRf1hursmnxbDeiPMZBOvgj74Y5RjzMa7r35YbZ5Cp9kjT0ZQwK20KtIMtsQW79RPn0Is5MXg-TXpt85c9LKiL6mJOReuMLbw0QZV_QTY6q__SViQyFoizKlkuVggsFREgxtmh_kzBYpxYvVMxHQ_DataEGlpAAHaFv2OwLMrr_F4vOsEx-3rCSwcwT8KNQPpoBIkVkG5dhZC62ACwrYP8GPo3GYjwZkOtJ7jP1tsgLIu1w_eopMsk8ceNMAe9enplmdBujdyqPvv6TbJku-8qbwYa_OMASfSdB0dNnYk2HKmh8l1XIXA4sVJfikBbtL_cWZ_Fljw8wAAgDHa65KB-s8Svqh-gxLP3cN1Wi_6uaq32yqV-Ys6piVgCZrWDtjTA9WcaRKBOQf6BlTucMtblrT6IOCrylTHxdjf9DUjapoXe-Ubujzid85BNUnwrNVrE8K5StFFtha6B-lkAFfEXyuCj-6vqZk0DgMyr1pydSuBBzpU73cQkZ-w_i7)
 
 A imagem acima denota as principais entidades que compõem o sistema e os seus relacionamentos. O diagrama de classes UML é uma representação visual que ilustra a estrutura estática de um sistema, exibindo as classes, seus atributos, métodos, relacionamentos e associações. Ele desempenha um papel fundamental na modelagem orientada a objetos, permitindo uma visualização clara e organizada da organização e composição das classes em um sistema de software. Além de fornecer uma visão estrutural, o diagrama de classes pode ser expandido para mostrar a implementação de cada componente por meio de diagramas como UML (Linguagem de Modelagem Unificada), diagramas de entidade-relacionamento ou outros similares. No entanto, é importante destacar que esse nível de detalhe é opcional e geralmente disponível mediante solicitação em ferramentas como IDEs (Ambientes de Desenvolvimento Integrado).
 

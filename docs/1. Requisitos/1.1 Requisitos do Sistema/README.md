@@ -1,13 +1,13 @@
 # 1.1 Requisitos do Sistema
 
-`/1. Requisitos/1.1 Requisitos do Sistema`
+`\1. Requisitos\1.1 Requisitos do Sistema`
 
 * [Sistema ACS | Docs](../../README.md)
   * [1. Requisitos](../../1.%20Requisitos/README.md)
     * [**1.1 Requisitos do Sistema**](../../1.%20Requisitos/1.1%20Requisitos%20do%20Sistema/README.md)
     * [1.2 Casos de uso](../../1.%20Requisitos/1.2%20Casos%20de%20uso/README.md)
       * [1.2.1 Usuário geral](../../1.%20Requisitos/1.2%20Casos%20de%20uso/1.2.1%20Usu%C3%A1rio%20geral/README.md)
-      * [1.2.2 Discente](../../1.%20Requisitos/1.2%20Casos%20de%20uso/1.2.2%20Aluno/README.md)
+      * [1.2.2 Aluno](../../1.%20Requisitos/1.2%20Casos%20de%20uso/1.2.2%20Aluno/README.md)
     * [1.3 Requisitos Arquiteturais](../../1.%20Requisitos/1.3%20Requisitos%20Arquiteturais/README.md)
     * [1.4 Backlog do Sistema](../../1.%20Requisitos/1.4%20Backlog%20do%20Sistema/README.md)
   * [2. Níveis](../../2.%20N%C3%ADveis/README.md)
@@ -44,11 +44,11 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 
 | RF 001 - Realizar cadastro via sistema                                                                                                                            |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:**   Um usuário deve ser capaz de realizar cadastro no sistema, vale ressaltar que para todo cadastro feito é atribuído ao usuário o perfil de aluno. |
+| **Descrição:**   Um usuário deve ser capaz de realizar cadastro no sistema. |
 | **Atores:**   Nenhum.                                                                                                                                             |
-| **Prioridade:**   Média.                                                                                                                                          |
-| **Entrada:**  Inserir nome completo, período, telefone, email, senha, cep, rua, bairro, cidade, UF, número.                                                       |
-| **Pré-condições:** Cadastar-se com email institucional, senha com 8 ou mais caracteres incluindo caracteres especiais, letras maiúsculas e minúsculas.            |
+| **Prioridade:**   Alta.                                                                                                                                          |
+| **Entrada:**  Inserir nome completo, função, período em caso de discente, telefone, email, senha, cep, rua, bairro, cidade, UF, número.                                                       |
+| **Pré-condições:** Cadastrar-se com email institucional, senha com 8 ou mais caracteres incluindo caracteres especiais, letras maiúsculas, minúsculas e números.            |
 | **Saída:** Confirmação de cadastro.                                                                                                                               |
 | **Pós-condições:** O usuário será direcionado para a tela de perfil para certificar que é membro da instituição, passando por um processo de verificação.         |
 
@@ -62,7 +62,18 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação de login.                                                                                                         |
 | **Pós-condições:** O usuário será direcionado para a tela inicial do sistema, caso informe as credenciais corretamente (e-mail e senha). |
 
-| RF 003 - Realizar login via Google                                                                                                     |
+| RF 003 - Escolher perfil do usuário |
+| ------------------------------------------------------------- |
+| **Descrição:** O usuário deve ser capaz de escolher seu perfil antes de realizaar login caso ele tenha mais de um perfil.                                 |
+| **Atores:** Nenhum.                                            |
+| **Prioridade:** Alta.                                        |
+| **Entrada:** Escolha do perfil de usuário.                                   |
+| **Pré-condições:** Já possuir cadastro no sistema.                             |
+| **Saída:** Confirmação de perfil escolhido.                                     |
+| **Pós-condições:** Usuário será redirecionado para a tela inicial do sistema mediante ao perfil escolhido.                             |
+
+
+| RF 004 - Realizar login via Google                                                                                                     |
 | -------------------------------------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de fazer login no aplicativo utilizando o serviço de SSO (Single Sign-On) do Google, o OAuth2. |
 | **Atores:** Nenhum.                                                                                                                    |
@@ -72,7 +83,7 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação de login.                                                                                                       |
 | **Pós-condições:** O usuário será direcionado para a tela de perfil para completar os dados de cadastro.                               |
 
-| RF 004 - Sair do sistema                                                       |
+| RF 005 - Sair do sistema                                                       |
 | ------------------------------------------------------------------------------ |
 | **Descrição:** O usuário deve ser capaz de sair do sistema.                    |
 | **Atores:** Usuário geral.                                                     |
@@ -82,7 +93,7 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação de logoff.                                              |
 | **Pós-condições:** O usuário será direcionado para a tela de login.            |
 
-| RF 005 - Verificar usuário institucional                                                                                                                   |
+| RF 006 - Verificar usuário institucional                                                                                                                   |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve realizar o processo de verificação, o qual receberá um token via e-mail para confirmar se é uma conta institucional própria. |
 | **Atores:** Usuário geral.                                                                                                                                 |
@@ -92,7 +103,7 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Saídas: Confirmação da verificação institucional do usuário.                                                                                    |
 | **Pós-condições:** O usuário será direcionado para a tela inicial do sistema.                                                                              |
 
-| RF 006 - Alterar senha                                                                            |
+| RF 007 - Alterar senha                                                                            |
 | ------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de alterar sua própria senha.                             |
 | **Atores:** Usuário geral.                                                                        |
@@ -102,7 +113,7 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação da alteração da senha.                                                     |
 | **Pós-condições:** O usuário recebe uma mensagem informando que a senha foi alterada com sucesso. |
 
-| RF 007 - Recuperar senha                                                                          |
+| RF 008 - Recuperar senha                                                                          |
 | ------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de recuperar sua senha.                                   |
 | **Atores:** Usuário geral.                                                                        |
@@ -112,7 +123,7 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação da alteração da senha.                                                     |
 | **Pós-condições:** O usuário recebe uma mensagem informando que a senha foi alterada com sucesso. |
 
-| RF 008 - Consultar dados do próprio usuário                                                                                                                                                                  |
+| RF 009 - Consultar dados do próprio usuário                                                                                                                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Descrição:** O usuário deve ser capaz de visualizar todos os seus dados. Sendo possível visualizar o nome completo, cpf, período, telefone, e-mail, senha oculta, status de verificação, curso e endereço. |
 | **Atores:** Usuário geral.                                                                                                                                                                                   |
@@ -122,7 +133,7 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Não possui saídas.                                                                                                                                                                                |
 | **Pós-condições:** O usuário é direcionado para a página de perfil.                                                                                                                                          |
 
-| RF 009 - Editar dados do próprio usuário                                                                |
+| RF 010 - Editar dados do próprio usuário                                                                |
 | ------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de editar seus dados exceto e-mail, matrícula e CPF.            |
 | **Atores:** Usuário geral.                                                                              |
@@ -132,7 +143,7 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação da alteração dos dados.                                                          |
 | **Pós-condições:** O usuário recebe uma mensagem informando que seus dados foram alterados com sucesso. |
 
-| RF 010 - Apagar dados do usuário                                                                        |
+| RF 011 - Apagar dados do usuário                                                                        |
 | ------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de solicitar que todos os seus dados sejam apagados do sistema. |
 | **Atores:** Usuário geral.                                                                              |
@@ -142,11 +153,32 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação da exclusão dos dados.                                                           |
 | **Pós-condições:** O usuário é redirecionado para a tela de login do sistema.                           |
 
+| RF 012 - Solicitar Desbloqueio de Perfil |
+| ------------------------------------------------------------- |
+| **Descrição:** O usuário deve ser capaz de solicitar à escolaridade o desbloqueio do seu perfil no sistema em caso de perda de senha e bloqueio geral.                                 |
+| **Atores:** Nenhum.                                            |
+| **Prioridade:** Média .                                        |
+| **Entrada:** Não possui.                                   |
+| **Pré-condições:** Possuir um perfil bloqueado no sistema.                             |
+| **Saída:** Perfil desbloqueado.                                     |
+| **Pós-condições:** Não possui.                             |
+
+
 ### Perfil Aluno
 
 O aluno possui acesso ao sistema para enviar requisições juntamente com suas atividades complementares. Além de obter informações sobre o progresso da validação da sua requisição, permitindo que você acompanhe em qual etapa do processo ela se encontra.
 
-| RF 011 - Cadastrar Requisição                                                                         |
+| RF 013 - Dashboard do Discente|
+| ------------------------------------------------------------- |
+| **Descrição:** O usuário deve ter uma tela inicial para centralizar todas as operações relacionadas ao requerimento.                                 |
+| **Atores:** Discente.                                            |
+| **Prioridade:** Alta.                                        |
+| **Entrada:** Não possui.                                   |
+| **Pré-condições:** Estar logado no sistema.                             |
+| **Saída:** Acesso ao dashboard.                                     |
+| **Pós-condições:** Não possui.                             |
+
+| RF 014 - Cadastrar Requisição                                                                         |
 | --------------------------------------------------------------------------------------------------------|
 | **Descrição:** O usuário deve ser capaz de cadastrar uma requisição com o intuito de ratificar uma determinada quantidade de horas das suas atividades complementares. Para cadastrar a requisição é preciso que o discente acesse o barema   disponibilizado no dashboard principal para responder todas as informações necessárias.                                                             |
 | **Atores:** Discente.                                                                                   |
@@ -156,7 +188,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Confirmação do envio da requisição.                                                          |
 | **Pós-condições:** O usuário é redirecionado para a tela específica da requisição enviada, e a coordenação recebe a notificação por e-mail.                                                                                   |
 
-| RF 012 - Consultar lista de requisições                                                                               |
+| RF 015 - Consultar lista de requisições                                                                               |
 | --------------------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de visualizar sua lista de requisições.                                       |
 | **Atores:** Discente.                                                                                                    |
@@ -166,7 +198,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Não possui saídas.                                                                                         |
 | **Pós-condições:** Caso selecione alguma requisição, o usuário é redirecionado para a tela da requisição selecionada. |
 
-| RF 013 - Buscar requisição específica                                               |
+| RF 016 - Buscar requisição específica                                               |
 | ----------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de visualizar uma requisição específica.    |
 | **Atores:** Discente.                                                                  |
@@ -176,7 +208,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Não possui saídas.                                                       |
 | **Pós-condições:** O usuário é redirecionado para a tela da requisição selecionada. |
 
-| RF 014 - Baixar arquivo PDF referente à requisição                                                       |
+| RF 017 - Baixar arquivo PDF referente à requisição                                                       |
 | -------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ter a opção de fazer o download da requisição em formato PDF.              |
 | **Atores:** Discente.                                                                                       |
@@ -186,95 +218,86 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | **Saída:** Confirmação do download do arquivo.                                                           |
 | **Pós-condições:** O usuário vê o arquivo baixado na pasta selecionada.                                  |
 
-| RF 015 - Visualizar indicadores sobre as requisições enviadas |
+| RF 018 - Visualizar indicadores sobre as requisições enviadas |
 | ------------------------------------------------------------- |
-| **Descrição:** Em construção.                                 |
+| **Descrição:** O usuário deve ser capaz de visualizar o status da solicitação em ACEITO ou NEGADO.                                 |
 | **Atores:** Discente.                                            |
 | **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
-| **Pré-condições:** Em construção.                             |
-| **Saída:** Em construção.                                     |
-| **Pós-condições:** Em construção.                             |
+| **Entrada:** Não possui.                                   |
+| **Pré-condições:** Possuir solicitações enviadas.                             |
+| **Saída:** Resultado do veredito da requisição.                                     |
+| **Pós-condições:** Não possui.                             |
 
-| RF 016 - Criar rascunhos de requisições |
+| RF 019 - Criar rascunhos de requisições |
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve ter o poder de salvar as informações de uma solicitação, junto de documentos anexos, que ainda possa estar incompleta. Nesse caso, é feito um rascunho da requisição que será encaminhado para a coordenação somente após o usuário solicitá-lo.                                 |
 | **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
+| **Prioridade:** Alta.                                        |
+| **Entrada:** Inserir dados de requerimento: Título, Data Inicial/Data Final, Eixo de Ensino, Atividade, Quantidade de Horas, Anexar Certificado.                                   |
 | **Pré-condições:** Ter preenchido o requerimento com parte das informações solicitadas.                         |
 | **Saída:** Confirmação de requisição em rascunho.                                     |
 | **Pós-condições:** O usuário é redirecionado para a dashboard atualizada com a fila de rascunhos.                             |
 
-| RF 017 - Deletar rascunhos de requisições |
+| RF 020 - Deletar rascunhos de requisições |
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve poder apagar um rascunho de requisição caso ache necessário.                                 |
 | **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
+| **Prioridade:** Alta.                                        |
+| **Entrada:** Não possui.                                   |
 | **Pré-condições:** Ter um rascunho salvo.                             |
 | **Saída:** Rascunho apagado.                                     |
-| **Pós-condições:** Em construção.                             |
+| **Pós-condições:** A fila de requisição atualizada com o rascunho apagado.                             |
 
-| RF 018 - Alterar rascunhos de requisições  |
+| RF 021 - Alterar rascunhos de requisições  |
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve poder alterar dados de uma requisição em situação de rascunho quando achar necessário.                                 |
 | **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
-| **Pré-condições:** Em construção.                             |
-| **Saída:** Em construção.                                     |
-| **Pós-condições:** Em construção.                             |
+| **Prioridade:** Alta.                                        |
+| **Entrada:** Inserir ou alterar os dados de requerimento: Título, Data Inicial/Data Final, Eixo de Ensino, Atividade, Quantidade de Horas, Anexar Certificado.                                   |
+| **Pré-condições:** Ter requerimento em rascunho.                             |
+| **Saída:** Rascunho atualizado.                                     |
+| **Pós-condições:** A fila de requisição atualizada com o rascunho também atualizado.                             |
 
-| RF 019 - Enviar solicitação à coordenação|
+| RF 022 - Enviar solicitação à coordenação|
 | ------------------------------------------------------------- |
 | **Descrição:** O usuário deve poder fazer o envio da solicitação completa criada anteriormente para o próximo ator do fluxo dentro do sistema.                                 |
 | **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
-| **Pré-condições:** Em construção.                             |
-| **Saída:** Em construção.                                     |
-| **Pós-condições:** Em construção.                             |
+| **Prioridade:** Alta.                                        |
+| **Entrada:** Não possui.                                   |
+| **Pré-condições:** Ter solicitação de contagem já  criada.                             |
+| **Saída:** Enviado para o coordenador.                                     |
+| **Pós-condições:** Usuário é redirecionado pra o dashboard.                             |
 
-| RF 020 - Alterar solicitação|
+| RF 023 - Alterar solicitação|
 | ------------------------------------------------------------- |
-| **Descrição:** U usuário deve poder alterar dados de uma solicitação já enviada caso esta não tenha alcançado uma fase muito avançada da requisição.                                 |
+| **Descrição:** O usuário deve poder alterar dados de uma solicitação já enviada caso esta não tenha alcançado uma fase muito avançada da requisição.                                 |
 | **Atores:** Discente.                                            |
 | **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
-| **Pré-condições:** Em construção.                             |
-| **Saída:** Em construção.                                     |
-| **Pós-condições:** Em construção.                             |
+| **Entrada:** Alterar dados da solicitação do requerimento.                                   |
+| **Pré-condições:** Ter uma solicitação encaminhada para a coordenação e não entregue.                             |
+| **Saída:** Solicitação enviada atualizada.                                     |
+| **Pós-condições:** Redirecionamento para o dashboard do usuário.                             |
 
-| RF 021 - Visualizar dados do discente|
+| RF 024 - Visualizar dados do discente|
 | ------------------------------------------------------------- |
-| **Descrição:** O usuário deve ter acesso em parte especificada no sistema a um quantitativo de horas cumpridas, junto de poder conferir um extrato de horas.                                 |
+| **Descrição:** O usuário deve ter acesso em parte especificada no sistema a um quantitativo de horas cumpridas, junto de poder conferir um extrato de horas, apenas visualização.                                 |
 | **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
-| **Pré-condições:** Em construção.                             |
-| **Saída:** Em construção.                                     |
-| **Pós-condições:** Em construção.                             |
+| **Prioridade:** Importante.                                        |
+| **Entrada:** Não possui.                                   |
+| **Pré-condições:** Não possui.                             |
+| **Saída:** Não possui.                                     |
+| **Pós-condições:** Não possui.                             |
 
-| RF 022 - Visualizar fluxo de requisição|
+| RF 025 - Visualizar fluxo de requisição|
 | ------------------------------------------------------------- |
-| **Descrição:** O usuário deve, caso tenha requisições enviadas, poder conferir o andamento de seu requerimento, com uma análise de trânsito visível e atualizada.                                 |
+| **Descrição:** O usuário deve, caso tenha requisições enviadas, poder conferir o andamento de seu requerimento, com uma análise de trânsito visível e atualizada. (Apenas visualização)                                 |
 | **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
-| **Pré-condições:** Em construção.                             |
-| **Saída:** Em construção.                                     |
-| **Pós-condições:** Em construção.                             |
+| **Prioridade:** Baixo.                                        |
+| **Entrada:** Não possui.                                   |
+| **Pré-condições:** Ter requisição enviada.                             |
+| **Saída:** Não possui.                                     |
+| **Pós-condições:** Não possui.                             |
 
-| RF 023 - Dashboard do Discente|
-| ------------------------------------------------------------- |
-| **Descrição:** Em construção.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Em construção.                                   |
-| **Pré-condições:** Em construção.                             |
-| **Saída:** Em construção.                                     |
-| **Pós-condições:** Em construção.                             |
 ---
 
 ## Requisitos não funcionais

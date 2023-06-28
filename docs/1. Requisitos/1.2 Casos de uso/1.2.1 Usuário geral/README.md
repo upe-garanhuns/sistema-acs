@@ -1,6 +1,6 @@
 # 1.2.1 Usuário geral
 
-`/1. Requisitos/1.2 Casos de uso/1.2.1 Usuário geral`
+`\1. Requisitos\1.2 Casos de uso\1.2.1 Usuário geral`
 
 * [Sistema ACS | Docs](../../../README.md)
   * [1. Requisitos](../../../1.%20Requisitos/README.md)

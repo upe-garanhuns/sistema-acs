@@ -1,6 +1,6 @@
 # 2.3.1-Back
 
-`/2. Níveis/2.3 Componente - C3/2.3.1-Back`
+`\2. Níveis\2.3 Componente - C3\2.3.1-Back`
 
 * [Sistema ACS | Docs](../../../README.md)
   * [1. Requisitos](../../../1.%20Requisitos/README.md)
@@ -24,7 +24,7 @@
 
 ---
 
-![diagram](https://www.plantuml.com/plantuml/svg/0/bPNDRjim3CVlVWekEQUNOHYM0KC3PnjsA5guAtOOWe6nc4IO9NgINAmRzZ0zzRHJi2VmYussazXkadxe4alyanH_efHJ7z25mcGmrRXqQ13Ybp22c4tEbcmW7xq8Ap84FiUKCfn7aML5CFZWs8RHUwi6W1uMrGo6-7gEhzx0xoZw4qNYy1sN8frSVAf5cEkE16GiE5FaO719xbgNTrpBV3L96OPVLZhGHbcDhx4aSPpH92Nl-RBHpLfxGZyAxNMA79CBUY5Vwa7PlkqXHykodNQ3t-hvyAF3cvsa6XViVQ418IlNIua4WilIibodca5nJ-kr3sJmPBT8LjLvwWM1sAMqAL-svcfGQJj_55R7zp2mhdsluawcOrLFGe6YCmo50IsTummfNTuwALeQoL5FZOra8JqbIA3mnKRPOklfHVCiL0dbx7KernAqPkMQ1QwIxBEwyWMA9Mb51o4TjdTQvg1W2x6pXMCG4_9oxtnvUqqPv7Ai2_mbvOWpv-Iml2l_oOtiWI68awkf984vMharig1a9_vfdAPiohzsmqYnqVOWdpEvyXdFAf6fFrlJzFDvlQu2Tv597VAsp9gwcyaUa4s-up1oSPNUmKeilreA8m-vqpRLEUfx9DXlU-Inukl7QkJqSXL6etVLkzGOkXTArdSFKQOjZULvl7aRw6SOpxE2O2nDsvIqbOb7hykEU-qdgtqRJ5t7wkj4eL-HwWKnQ7LUPFVoIn0vXMVxTpTTnMXE-2bXpfCpUUXFXR7yXVm7)
+![diagram](https://www.plantuml.com/plantuml/svg/0/bPNDRjD04CVlaV8Eq-ISNX1210arIW1ng5gvL1nGX2RUIRB2ksjsrnK5yJ0zzSGfuWdyOiok4sotJfhwaEp7Vxv-dbsVEO_M5og3cSILHOKmVG4Zc1gL6qtQa-ltJloQ587BCQKC5_rUlwUD81YyjqRxqJij1e0Ebc46Gtorm9UluLUG_Gu_RFODLooVN7wCGinbKmRyB4qcoCBWYkoDBEzDrBamIGqCFw-bfvqqF5-c7CgQZ2OfEMUkAk6y8KZeUo6TJD5CoNgvv94uhElOF6Yg3UTKP_arpeSVBDxMcl1S6kSA2GXPkLcnBs1ocbRb9fK6X6cBdNIU59xMgwH535MjHA1DO5iGdA6DpD9w_ZItXl4UTYt1uzeRqVRMF_45ib0PA1H8xYYhICZopdBvt62MsdAiD4lkDQO3XIksqffWsu15pwQMK6wSzEM6FKTijbem8L87jcjN86ybjQgRrnv1eu-w5JkUZJJsyap8yT5qvTqDPP3pQrxYJww9hKrE5ilxycyuj2r41DFaUiPXO86QJnGl24x67KziPbJvHszf2QEaxYPrpXT3PkP1fUAmiJVxT14tX3SjUbmFNqFp2a0rUOnc6_C0bfoDkQ4mgFbVSeNa8BTIfp97-P29SRk-EGP3lDj6LgxMVZHw6wwmtLRpnF7E_qihavh6VANUll7qmuyNMK4mvdxUrhRJiKch-GwOTSIBrXMofcaOdGfqQn8jDmgrp8liOGhiXT_9ynqq4mzEgZT-Z9-Bv3n-7SwODtzz_W40)
 
 O diagrama de componentes em questão oferece uma representação visual dos componentes principais do sistema. Esses componentes são elementos fundamentais que desempenham papéis específicos no funcionamento do sistema como um todo.
 

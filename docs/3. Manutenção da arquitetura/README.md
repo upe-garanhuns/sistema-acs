@@ -1,6 +1,6 @@
 # 3. Manutenção da arquitetura
 
-`/3. Manutenção da arquitetura`
+`\3. Manutenção da arquitetura`
 
 * [Sistema ACS | Docs](../README.md)
   * [1. Requisitos](../1.%20Requisitos/README.md)
