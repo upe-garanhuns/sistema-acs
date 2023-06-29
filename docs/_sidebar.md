@@ -4,6 +4,8 @@
     * [1.2 Casos de uso](1.%20Requisitos/1.2%20Casos%20de%20uso/HOME)
       * [1.2.1 Usuário geral](1.%20Requisitos/1.2%20Casos%20de%20uso/1.2.1%20Usu%C3%A1rio%20geral/HOME)
       * [1.2.2 Aluno](1.%20Requisitos/1.2%20Casos%20de%20uso/1.2.2%20Aluno/HOME)
+      * [1.2.3 Coordenador](1.%20Requisitos/1.2%20Casos%20de%20uso/1.2.3%20Coordenador/HOME)
+      * [1.2.4 Comissão](1.%20Requisitos/1.2%20Casos%20de%20uso/1.2.4%20Comiss%C3%A3o/HOME)
     * [1.3 Requisitos Arquiteturais](1.%20Requisitos/1.3%20Requisitos%20Arquiteturais/HOME)
     * [1.4 Backlog do Sistema](1.%20Requisitos/1.4%20Backlog%20do%20Sistema/HOME)
   * [2. Níveis](2.%20N%C3%ADveis/HOME)
