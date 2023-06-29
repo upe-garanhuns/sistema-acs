@@ -1,0 +1,24 @@
+@startuml RF_017
+!theme spacelab
+skinparam actorStyle awesome
+
+:Usuário do sistema:  as usuario #text:blue
+:Coordenador: as coordenador #text:blue
+:Sistema: as sistema #text:blue
+
+rectangle RF_017
+
+
+(Solicitar permissões de coordenação) as solicitar_permissao
+(Enviar documentos para validação) as enviar_docs 
+(validar documentos) as validar_doc
+(Enviar email de confirmação) as enviar_email
+
+usuario --> solicitar_permissao
+enviar_docs .right.> validar_doc #text:blue : <<include>> 
+solicitar_permissao ..> enviar_docs #text:blue : <<include>>
+coordenador --> validar_doc
+validar_doc .right.> enviar_email #text:blue : <<include>>
+sistema --> enviar_email
+
+@enduml

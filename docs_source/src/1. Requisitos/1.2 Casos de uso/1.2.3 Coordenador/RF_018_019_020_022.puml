@@ -1,0 +1,52 @@
+@startuml RF 018-22
+skinparam actorStyle awesome
+!theme spacelab
+
+rectangle "RF018/019/020/022"
+
+:Coordenador: as coordenador #text:blue
+:Sistema: as sistema #text:blue
+
+(Consultar lista\nde requisições) as consultar_lista_de_requisicao
+
+(Filtrar requisições) as filtrar_requisicoes
+
+(Por data) as data
+
+(Por semestre) as semestre
+
+(Por status da requisição) as status_requisicao
+
+(Por aluno) as aluno
+
+(Selecionar requisição) as selecionar_requisicao
+
+(Encaminhar requisição para a comissão) as encaminhar_requisicao
+
+(Baixar\nrequisição) as baixar_requisicao
+
+(Enviar email de confirmação) as enviar_email_comissao
+
+(Submeter requisição\nassinada no sistema) as submeter_requisicao_sistema
+
+(Atribuir perfil\nde comissão) as atribuir_perfil_comissao
+
+
+
+
+coordenador --> consultar_lista_de_requisicao
+coordenador -left-> baixar_requisicao
+coordenador --> submeter_requisicao_sistema
+coordenador --> atribuir_perfil_comissao
+coordenador -right-> encaminhar_requisicao
+
+consultar_lista_de_requisicao <.. filtrar_requisicoes #text:blue : <<extend>>
+filtrar_requisicoes <.. data #text:blue : <<extend>>
+filtrar_requisicoes <.. semestre #text:blue : <<extend>>
+filtrar_requisicoes <.. status_requisicao #text:blue : <<extend>>
+filtrar_requisicoes <.. aluno #text:blue : <<extend>>
+consultar_lista_de_requisicao <.. selecionar_requisicao #text:blue : <<extend>>
+sistema --> enviar_email_comissao
+
+encaminhar_requisicao ..> enviar_email_comissao #text:blue : <<include>>
+@enduml

@@ -1,0 +1,28 @@
+@startuml RF 021
+skinparam actorStyle awesome
+!theme spacelab
+
+rectangle "RF021"
+:Coordenador: as coordenador #text:blue
+:Sistema: as sistema #text:blue
+
+(Ratificar requisição) as ratificar_requisicao
+
+(Deferir requisição) as deferir_requisicao
+
+(indeferir requisição) as indeferir_requisicao
+
+(Enviar email) as enviar_email_es_coord
+
+(Para Coordenação) as coordenacao
+
+(Para Escolaridade) as escolaridade
+
+coordenador --> ratificar_requisicao
+ratificar_requisicao <.. deferir_requisicao #text:blue : <<extend>>
+ratificar_requisicao <.. indeferir_requisicao #text:blue : <<extend>>
+sistema --> enviar_email_es_coord
+enviar_email_es_coord ..> coordenacao #text:blue : <<include>>
+enviar_email_es_coord ..> escolaridade #text:blue : <<include>>
+ratificar_requisicao ..> enviar_email_es_coord #text:blue : <<include>>
+@enduml
