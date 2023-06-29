@@ -16,46 +16,46 @@ A prioridade baixa é atribuída aos requisitos que não comprometem as funciona
 
 Ao utilizar essa técnica de classificação, é possível estabelecer uma hierarquia de importância para os requisitos, permitindo uma melhor alocação de recursos e garantindo que os aspectos essenciais do sistema sejam tratados prioritariamente. Isso ajuda a orientar o desenvolvimento de acordo com as necessidades críticas do projeto, enquanto permite o planejamento de implementações futuras para requisitos de menor prioridade
 
-| RF 001 - Realizar cadastro via sistema                                                                                                                            |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RF 001 - Realizar cadastro via sistema                                      |
+| --------------------------------------------------------------------------- |
 | **Descrição:**   Um usuário deve ser capaz de realizar cadastro no sistema. |
-| **Atores:**   Nenhum.                                                                                                                                             |
-| **Prioridade:**   Alta.                                                                                                                                          |
-| **Entrada:**  Inserir nome completo, função, período em caso de discente, telefone, email, senha, cep, rua, bairro, cidade, UF, número.                                                       |
-| **Pré-condições:** Cadastrar-se com email institucional, senha com 8 ou mais caracteres incluindo caracteres especiais, letras maiúsculas, minúsculas e números.            |
-| **Saída:** Confirmação de cadastro.                                                                                                                               |
-| **Pós-condições:** O usuário será direcionado para a tela de perfil para certificar que é membro da instituição, passando por um processo de verificação.         |
+| **Atores:**   Nenhum.                                                       |
+| **Prioridade:**   Alta.                                                     |
+| **Entrada:**  Inserir nome completo, função, período em caso de discente, telefone, email, senha, cep, rua, bairro, cidade, UF, número.                                                           |
+| **Pré-condições:** Cadastrar-se com email institucional, senha com 8 ou mais caracteres incluindo caracteres especiais, letras maiúsculas, minúsculas e números.                                      |
+| **Saída:** Confirmação de cadastro.                                         |
+| **Pós-condições:** O usuário será direcionado para a tela de perfil para certificar que é membro da instituição, passando por um processo de verificação.                                               |
 
-| RF 002 - Realizar login via sistema                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** Um usuário deve ser capaz de realizar login via sistema.                                                                  |
-| **Atores:** Usuário geral.                                                                                                               |
-| **Prioridade:** Média.                                                                                                                   |
-| **Entrada:** Inserir e-mail e senha.                                                                                                     |
-| **Pré-condições:** O usuário deve estar cadastrado.                                                                                      |
-| **Saída:** Confirmação de login.                                                                                                         |
-| **Pós-condições:** O usuário será direcionado para a tela inicial do sistema, caso informe as credenciais corretamente (e-mail e senha). |
+| RF 002 - Realizar login via sistema                                     |
+| ----------------------------------------------------------------------- |
+| **Descrição:** Um usuário deve ser capaz de realizar login via sistema. |
+| **Atores:** Usuário geral.                                              |
+| **Prioridade:** Média.                                                  |
+| **Entrada:** Inserir e-mail e senha.                                    |
+| **Pré-condições:** O usuário deve estar cadastrado.                     |
+| **Saída:** Confirmação de login.                                        |
+| **Pós-condições:** O usuário será direcionado para a tela inicial do sistema, caso informe as credenciais corretamente (e-mail e senha).                                                         |
 
-| RF 003 - Escolher perfil do usuário |
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve ser capaz de escolher seu perfil antes de realizaar login caso ele tenha mais de um perfil.                                 |
-| **Atores:** Nenhum.                                            |
-| **Prioridade:** Alta.                                        |
-| **Entrada:** Escolha do perfil de usuário.                                   |
-| **Pré-condições:** Já possuir cadastro no sistema.                             |
-| **Saída:** Confirmação de perfil escolhido.                                     |
-| **Pós-condições:** Usuário será redirecionado para a tela inicial do sistema mediante ao perfil escolhido.                             |
+| RF 003 - Escolher perfil do usuário                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve ser capaz de escolher seu perfil antes de realizaar login caso ele tenha mais de um perfil. |
+| **Atores:** Nenhum.                                                                                                       |
+| **Prioridade:** Alta.                                                                                                     |
+| **Entrada:** Escolha do perfil de usuário.                                                                                |
+| **Pré-condições:** Já possuir cadastro no sistema.                                                                        |
+| **Saída:** Confirmação de perfil escolhido.                                                                               |
+| **Pós-condições:** Usuário será redirecionado para a tela inicial do sistema mediante ao perfil escolhido.                |
 
 
-| RF 004 - Realizar login via Google                                                                                                     |
-| -------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** O usuário deve ser capaz de fazer login no aplicativo utilizando o serviço de SSO (Single Sign-On) do Google, o OAuth2. |
-| **Atores:** Nenhum.                                                                                                                    |
-| **Prioridade:** Baixa.                                                                                                                 |
-| **Entrada:** Selecionar a conta do Google.                                                                                             |
-| **Pré-condições:** Possuir uma conta Google.                                                                                           |
-| **Saída:** Confirmação de login.                                                                                                       |
-| **Pós-condições:** O usuário será direcionado para a tela de perfil para completar os dados de cadastro.                               |
+| RF 004 - Realizar login via Google                                                                        |
+| --------------------------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve ser capaz de fazer login no aplicativo utilizando o serviço de SSO (Single Sign-On) do Google, o OAuth2.                                                                                           |
+| **Atores:** Nenhum.                                                                                       |
+| **Prioridade:** Baixa.                                                                                    |
+| **Entrada:** Selecionar a conta do Google.                                                                |
+| **Pré-condições:** Possuir uma conta Google.                                                              |
+| **Saída:** Confirmação de login.                                                                          |
+| **Pós-condições:** O usuário será direcionado para a tela de perfil para completar os dados de cadastro.  |
 
 | RF 005 - Sair do sistema                                                       |
 | ------------------------------------------------------------------------------ |
@@ -67,15 +67,15 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação de logoff.                                              |
 | **Pós-condições:** O usuário será direcionado para a tela de login.            |
 
-| RF 006 - Verificar usuário institucional                                                                                                                   |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** O usuário deve realizar o processo de verificação, o qual receberá um token via e-mail para confirmar se é uma conta institucional própria. |
-| **Atores:** Usuário geral.                                                                                                                                 |
-| **Prioridade:** Alta.                                                                                                                                      |
-| **Entrada:** Inserir token recebido por e-mail.                                                                                                            |
-| **Pré-condições:** O usuário não pode ser verificado e deve estar logado.                                                                                  |
-| **Saída:** Saídas: Confirmação da verificação institucional do usuário.                                                                                    |
-| **Pós-condições:** O usuário será direcionado para a tela inicial do sistema.                                                                              |
+| RF 006 - Verificar usuário institucional                                         |
+| -------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve realizar o processo de verificação, o qual receberá um token via e-mail para confirmar se é uma conta institucional própria.                                                   |
+| **Atores:** Usuário geral.                                                       |
+| **Prioridade:** Alta.                                                            |
+| **Entrada:** Inserir token recebido por e-mail.                                  |
+| **Pré-condições:** O usuário não pode ser verificado e deve estar logado.        |
+| **Saída:** Saídas: Confirmação da verificação institucional do usuário.          |
+| **Pós-condições:** O usuário será direcionado para a tela inicial do sistema.    |
 
 | RF 007 - Alterar senha                                                                            |
 | ------------------------------------------------------------------------------------------------- |
@@ -97,15 +97,15 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação da alteração da senha.                                                     |
 | **Pós-condições:** O usuário recebe uma mensagem informando que a senha foi alterada com sucesso. |
 
-| RF 009 - Consultar dados do próprio usuário                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| RF 009 - Consultar dados do próprio usuário                                     |
+| ------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de visualizar todos os seus dados. Sendo possível visualizar o nome completo, cpf, período, telefone, e-mail, senha oculta, status de verificação, curso e endereço. |
-| **Atores:** Usuário geral.                                                                                                                                                                                   |
-| **Prioridade:** Baixa.                                                                                                                                                                                       |
-| **Entrada:** Não possui entradas.                                                                                                                                                                            |
-| **Pré-condições:** O usuário deve estar logado.                                                                                                                                                              |
-| **Saída:** Não possui saídas.                                                                                                                                                                                |
-| **Pós-condições:** O usuário é direcionado para a página de perfil.                                                                                                                                          |
+| **Atores:** Usuário geral.                                                      |
+| **Prioridade:** Baixa.                                                          |
+| **Entrada:** Não possui entradas.                                               |
+| **Pré-condições:** O usuário deve estar logado.                                 |
+| **Saída:** Não possui saídas.                                                   |
+| **Pós-condições:** O usuário é direcionado para a página de perfil.             |
 
 | RF 010 - Editar dados do próprio usuário                                                                |
 | ------------------------------------------------------------------------------------------------------- |
@@ -127,14 +127,14 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 | **Saída:** Confirmação da exclusão dos dados.                                                           |
 | **Pós-condições:** O usuário é redirecionado para a tela de login do sistema.                           |
 
-| RF 012 - Solicitar Desbloqueio de Perfil |
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve ser capaz de solicitar à escolaridade o desbloqueio do seu perfil no sistema em caso de perda de senha e bloqueio geral.                                 |
-| **Atores:** Nenhum.                                            |
-| **Prioridade:** Média .                                        |
+| RF 012 - Solicitar Desbloqueio de Perfil                   |
+| ---------------------------------------------------------- |
+| **Descrição:** O usuário deve ser capaz de solicitar à escolaridade o desbloqueio do seu perfil no sistema em caso de perda de senha e bloqueio geral.                             |
+| **Atores:** Nenhum.                                        |
+| **Prioridade:** Média .                                    |
 | **Entrada:** Não possui.                                   |
-| **Pré-condições:** Possuir um perfil bloqueado no sistema.                             |
-| **Saída:** Perfil desbloqueado.                                     |
+| **Pré-condições:** Possuir um perfil bloqueado no sistema. |
+| **Saída:** Perfil desbloqueado.                            |
 | **Pós-condições:** Não possui.                             |
 
 
@@ -143,29 +143,29 @@ Ao utilizar essa técnica de classificação, é possível estabelecer uma hiera
 O aluno possui acesso ao sistema para enviar requisições juntamente com suas atividades complementares. Além de obter informações sobre o progresso da validação da sua requisição, permitindo que você acompanhe em qual etapa do processo ela se encontra.
 
 | RF 013 - Dashboard do Discente|
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve ter uma tela inicial para centralizar todas as operações relacionadas ao requerimento.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Alta.                                        |
-| **Entrada:** Não possui.                                   |
-| **Pré-condições:** Estar logado no sistema.                             |
-| **Saída:** Acesso ao dashboard.                                     |
-| **Pós-condições:** Não possui.                             |
+| -------------------------------------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve ter uma tela inicial para centralizar todas as operações relacionadas ao requerimento. |
+| **Atores:** Discente.                                                                                                |
+| **Prioridade:** Alta.                                                                                                |
+| **Entrada:** Não possui.                                                                                             |
+| **Pré-condições:** Estar logado no sistema.                                                                          |
+| **Saída:** Acesso ao dashboard.                                                                                      |
+| **Pós-condições:** Não possui.                                                                                       |
 
-| RF 014 - Cadastrar Requisição                                                                         |
-| --------------------------------------------------------------------------------------------------------|
-| **Descrição:** O usuário deve ser capaz de cadastrar uma requisição com o intuito de ratificar uma determinada quantidade de horas das suas atividades complementares. Para cadastrar a requisição é preciso que o discente acesse o barema   disponibilizado no dashboard principal para responder todas as informações necessárias.                                                             |
-| **Atores:** Discente.                                                                                   |
-| **Prioridade:** Alta.                                                                                   |
+| RF 014 - Cadastrar Requisição                                                                                          |
+| -----------------------------------------------------------------------------------------------------------------------|
+| **Descrição:** O usuário deve ser capaz de cadastrar uma requisição com o intuito de ratificar uma determinada quantidade de horas das suas atividades complementares. Para cadastrar a requisição é preciso que o discente acesse o barema   disponibilizado no dashboard principal para responder todas as informações necessárias.                                  |
+| **Atores:** Discente.                                                                                                  |
+| **Prioridade:** Alta.                                                                                                  |
 | **Entrada:** Inserir informações da requisição, como semestre e quantidade de certificados. Para cada certificado, fornecer título, descrição, data, horas, atividade em que se enquadra de acordo com o barema e o arquivo no formato PDF. |
-| **Pré-condições:** O usuário deve estar logado.                                                         |
-| **Saída:** Confirmação do envio da requisição.                                                          |
-| **Pós-condições:** O usuário é redirecionado para a tela específica da requisição enviada, e a coordenação recebe a notificação por e-mail.                                                                                   |
+| **Pré-condições:** O usuário deve estar logado.                                                                        |
+| **Saída:** Confirmação do envio da requisição.                                                                         |
+| **Pós-condições:** O usuário é redirecionado para a tela específica da requisição enviada, e a coordenação recebe a notificação por e-mail.                                                                                                  |
 
 | RF 015 - Consultar lista de requisições                                                                               |
 | --------------------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de visualizar sua lista de requisições.                                       |
-| **Atores:** Discente.                                                                                                    |
+| **Atores:** Discente.                                                                                                 |
 | **Prioridade:** Alta.                                                                                                 |
 | **Entrada:** Não possui entradas.                                                                                     |
 | **Pré-condições:** O usuário deve estar logado.                                                                       |
@@ -175,7 +175,7 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | RF 016 - Buscar requisição específica                                               |
 | ----------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de visualizar uma requisição específica.    |
-| **Atores:** Discente.                                                                  |
+| **Atores:** Discente.                                                               |
 | **Prioridade:** Média.                                                              |
 | **Entrada:** Não possui entradas.                                                   |
 | **Pré-condições:** O usuário deve estar logado.                                     |
@@ -185,146 +185,145 @@ O aluno possui acesso ao sistema para enviar requisições juntamente com suas a
 | RF 017 - Baixar arquivo PDF referente à requisição                                                       |
 | -------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ter a opção de fazer o download da requisição em formato PDF.              |
-| **Atores:** Discente.                                                                                       |
+| **Atores:** Discente.                                                                                    |
 | **Prioridade:** Baixa.                                                                                   |
 | **Entrada:** Não possui entradas.                                                                        |
 | **Pré-condições:** O usuário deve estar logado e selecionar a opção de fazer download do arquivo em PDF. |
 | **Saída:** Confirmação do download do arquivo.                                                           |
 | **Pós-condições:** O usuário vê o arquivo baixado na pasta selecionada.                                  |
 
-| RF 018 - Visualizar indicadores sobre as requisições enviadas |
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve ser capaz de visualizar o status da solicitação em ACEITO ou NEGADO.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Não possui.                                   |
-| **Pré-condições:** Possuir solicitações enviadas.                             |
-| **Saída:** Resultado do veredito da requisição.                                     |
-| **Pós-condições:** Não possui.                             |
+| RF 018 - Visualizar indicadores sobre as requisições enviadas                                          |
+| ------------------------------------------------------------------------------------------------------ |
+| **Descrição:** O usuário deve ser capaz de visualizar o status da solicitação em ACEITO ou NEGADO.     |
+| **Atores:** Discente.                                                                                  |
+| **Prioridade:** Média.                                                                                 |
+| **Entrada:** Não possui.                                                                               |
+| **Pré-condições:** Possuir solicitações enviadas.                                                      |
+| **Saída:** Resultado do veredito da requisição.                                                        |
+| **Pós-condições:** Não possui.                                                                         |
 
-| RF 019 - Criar rascunhos de requisições |
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve ter o poder de salvar as informações de uma solicitação, junto de documentos anexos, que ainda possa estar incompleta. Nesse caso, é feito um rascunho da requisição que será encaminhado para a coordenação somente após o usuário solicitá-lo.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Alta.                                        |
-| **Entrada:** Inserir dados de requerimento: Título, Data Inicial/Data Final, Eixo de Ensino, Atividade, Quantidade de Horas, Anexar Certificado.                                   |
-| **Pré-condições:** Ter preenchido o requerimento com parte das informações solicitadas.                         |
-| **Saída:** Confirmação de requisição em rascunho.                                     |
-| **Pós-condições:** O usuário é redirecionado para a dashboard atualizada com a fila de rascunhos.                             |
+| RF 019 - Criar rascunhos de requisições                                                            |
+| -------------------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve ter o poder de salvar as informações de uma solicitação, junto de documentos anexos, que ainda possa estar incompleta. Nesse caso, é feito um rascunho da requisição que será encaminhado para a coordenação somente após o usuário solicitá-lo.                                                                          |
+| **Atores:** Discente.                                                                              |
+| **Prioridade:** Alta.                                                                              |
+| **Entrada:** Inserir dados de requerimento: Título, Data Inicial/Data Final, Eixo de Ensino, Atividade, Quantidade de Horas, Anexar Certificado.                                                                           |
+| **Pré-condições:** Ter preenchido o requerimento com parte das informações solicitadas.            |
+| **Saída:** Confirmação de requisição em rascunho.                                                  |
+| **Pós-condições:** O usuário é redirecionado para a dashboard atualizada com a fila de rascunhos.  |
 
-| RF 020 - Deletar rascunhos de requisições |
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve poder apagar um rascunho de requisição caso ache necessário.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Alta.                                        |
-| **Entrada:** Não possui.                                   |
-| **Pré-condições:** Ter um rascunho salvo.                             |
-| **Saída:** Rascunho apagado.                                     |
-| **Pós-condições:** A fila de requisição atualizada com o rascunho apagado.                             |
+| RF 020 - Deletar rascunhos de requisições                                                    |
+| -------------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve poder apagar um rascunho de requisição caso ache necessário.   |
+| **Atores:** Discente.                                                                        |
+| **Prioridade:** Alta.                                                                        |
+| **Entrada:** Não possui.                                                                     |
+| **Pré-condições:** Ter um rascunho salvo.                                                    |
+| **Saída:** Rascunho apagado.                                                                 |
+| **Pós-condições:** A fila de requisição atualizada com o rascunho apagado.                   |
 
-| RF 021 - Alterar rascunhos de requisições  |
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve poder alterar dados de uma requisição em situação de rascunho quando achar necessário.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Alta.                                        |
-| **Entrada:** Inserir ou alterar os dados de requerimento: Título, Data Inicial/Data Final, Eixo de Ensino, Atividade, Quantidade de Horas, Anexar Certificado.                                   |
-| **Pré-condições:** Ter requerimento em rascunho.                             |
-| **Saída:** Rascunho atualizado.                                     |
-| **Pós-condições:** A fila de requisição atualizada com o rascunho também atualizado.                             |
+| RF 021 - Alterar rascunhos de requisições                                                                           |
+| ------------------------------------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve poder alterar dados de uma requisição em situação de rascunho quando achar necessário.|
+| **Atores:** Discente.                                                                                               |
+| **Prioridade:** Alta.                                                                                               |
+| **Entrada:** Inserir ou alterar os dados de requerimento: Título, Data Inicial/Data Final, Eixo de Ensino, Atividade, Quantidade de Horas, Anexar Certificado.                                                                              |
+| **Pré-condições:** Ter requerimento em rascunho.                                                                    |
+| **Saída:** Rascunho atualizado.                                                                                     |
+| **Pós-condições:** A fila de requisição atualizada com o rascunho também atualizado.                                |
 
-| RF 022 - Enviar solicitação à coordenação|
+| RF 022 - Enviar solicitação à coordenação                     |
 | ------------------------------------------------------------- |
-| **Descrição:** O usuário deve poder fazer o envio da solicitação completa criada anteriormente para o próximo ator do fluxo dentro do sistema.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Alta.                                        |
-| **Entrada:** Não possui.                                   |
-| **Pré-condições:** Ter solicitação de contagem já  criada.                             |
-| **Saída:** Enviado para o coordenador.                                     |
-| **Pós-condições:** Usuário é redirecionado pra o dashboard.                             |
+| **Descrição:** O usuário deve poder fazer o envio da solicitação completa criada anteriormente para o próximo ator do fluxo dentro do sistema.                                        |
+| **Atores:** Discente.                                         |
+| **Prioridade:** Alta.                                         |
+| **Entrada:** Não possui.                                      |
+| **Pré-condições:** Ter solicitação de contagem já  criada.    |
+| **Saída:** Enviado para o coordenador.                        |
+| **Pós-condições:** Usuário é redirecionado pra o dashboard.   |
 
-| RF 023 - Alterar solicitação|
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve poder alterar dados de uma solicitação já enviada caso esta não tenha alcançado uma fase muito avançada da requisição.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Média.                                        |
-| **Entrada:** Alterar dados da solicitação do requerimento.                                   |
-| **Pré-condições:** Ter uma solicitação encaminhada para a coordenação e não entregue.                             |
-| **Saída:** Solicitação enviada atualizada.                                     |
-| **Pós-condições:** Redirecionamento para o dashboard do usuário.                             |
+| RF 023 - Alterar solicitação                                                           |
+| -------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário deve poder alterar dados de uma solicitação já enviada caso esta não tenha alcançado uma fase muito avançada da requisição.                                                            |
+| **Atores:** Discente.                                                                  |
+| **Prioridade:** Média.                                                                 |
+| **Entrada:** Alterar dados da solicitação do requerimento.                             |
+| **Pré-condições:** Ter uma solicitação encaminhada para a coordenação e não entregue.  |
+| **Saída:** Solicitação enviada atualizada.                                             |
+| **Pós-condições:** Redirecionamento para o dashboard do usuário.                       |
 
-| RF 024 - Visualizar dados do discente|
+| RF 024 - Visualizar dados do discente                         |
 | ------------------------------------------------------------- |
-| **Descrição:** O usuário deve ter acesso em parte especificada no sistema a um quantitativo de horas cumpridas, junto de poder conferir um extrato de horas, apenas visualização.                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Importante.                                        |
-| **Entrada:** Não possui.                                   |
-| **Pré-condições:** Não possui.                             |
-| **Saída:** Não possui.                                     |
-| **Pós-condições:** Não possui.                             |
+| **Descrição:** O usuário deve ter acesso em parte especificada no sistema a um quantitativo de horas cumpridas, junto de poder conferir um extrato de horas, apenas visualização.        |
+| **Atores:** Discente.                                         |
+| **Prioridade:** Importante.                                   |
+| **Entrada:** Não possui.                                      |
+| **Pré-condições:** Não possui.                                |
+| **Saída:** Não possui.                                        |
+| **Pós-condições:** Não possui.                                |
 
-| RF 025 - Visualizar fluxo de requisição|
-| ------------------------------------------------------------- |
-| **Descrição:** O usuário deve, caso tenha requisições enviadas, poder conferir o andamento de seu requerimento, com uma análise de trânsito visível e atualizada. (Apenas visualização)                                 |
-| **Atores:** Discente.                                            |
-| **Prioridade:** Baixo.                                        |
-| **Entrada:** Não possui.                                   |
-| **Pré-condições:** Ter requisição enviada.                             |
-| **Saída:** Não possui.                                     |
-| **Pós-condições:** Não possui.                             |
+| RF 025 - Visualizar fluxo de requisição                        |
+| -------------------------------------------------------------- |
+| **Descrição:** O usuário deve, caso tenha requisições enviadas, poder conferir o andamento de seu requerimento, com uma análise de trânsito visível e atualizada. (Apenas visualização)  |
+| **Atores:** Discente.                                          |
+| **Prioridade:** Baixo.                                         |
+| **Entrada:** Não possui.                                       |
+| **Pré-condições:** Ter requisição enviada.                     |
+| **Saída:** Não possui.                                         |
+| **Pós-condições:** Não possui.                                 |
 
 ### Perfil Coordenador
 
 O coordenador é responsável pelo gerenciamento das requisições. Ele é o primeiro a receber as requisições e realiza validações iniciais, tendo autoridade para indeferir uma requisição sem envolvê-la com a comissão responsável. Somente um usuário com esse perfil possui a autoridade para concluir o fluxo da requisição.
 
-| RF 026 - Solicitar permissões de coordenação                                                                                                                                      |
-| -------------------------------------------------------- |
-| **Descrição:** O usuário pode solicitar ao administrador o perfil de coordenação, é necessário validar se o usuário é docente e faz parte da coordenação de um determinado curso. |
-| **Atores:** Usuário geral.                                                                                                                                                        |
-| **Prioridade:** Média.                                                                                                                                                            |
-| **Entrada:** O usuário deve enviar alguma documentação que confirme a veracidade da sua posição.                                                                                  |
-| **Pré-condições:** O usuário deve estar logado no sistema.                                                                                                                        |
-| **Saída:** Confirmação da solicitação de autorização.                                                                                                                             |
-| **Pós-condições:** O usuário deve receber por e-mail um retorno sobre a sua solicitação.                                                                                          |
+| RF 026 - Solicitar permissões de coordenação                                                                           |
+| ---------------------------------------------------------------------------------------------------------------------- |
+| **Descrição:** O usuário pode solicitar ao administrador o perfil de coordenação, é necessário validar se o usuário é docente e faz parte da coordenação de um determinado curso.                                                              |
+| **Atores:** Usuário geral.                                                                                             |
+| **Prioridade:** Média.                                                                                                 |
+| **Entrada:** O usuário deve enviar alguma documentação que confirme a veracidade da sua posição.                       |
+| **Pré-condições:** O usuário deve estar logado no sistema.                                                             |
+| **Saída:** Confirmação da solicitação de autorização.                                                                  |
+| **Pós-condições:** O usuário deve receber por e-mail um retorno sobre a sua solicitação.                               |
 
-| RF 027 - Consultar lista de requisições                                                                                                                                                                                                                                          |
-| ------------------------------------------------------ |
-| **Descrição:** O coordenador deve ser capaz de visualizar a lista de requisições encaminhadas para a coordenação e comissão do seu respectivo curso. Também deve ser possível filtrar as requisições por campos de interesse, como data, semestre, status da requisição e aluno. |
-| **Atores:** Coordenador.                                                                                                                                                                                                                                                         |
-| **Prioridade:** Média.                                                                                                                                                                                                                                                           |
-| **Entrada:** Nenhuma.                                                                                                                                                                                                                                                            |
-| **Pré-condições:** O usuário deve estar logado.                                                                                                                                                                                                                                  |
-| **Saída:** Não possui saídas.                                                                                                                                                                                                                                                    |
-| **Pós-condições:** Caso selecione alguma requisição, o usuário é redirecionado para tela de requisição selecionada.                                                                                                                                                              |
+| RF 027 - Consultar lista de requisições                                                                              |
+| -------------------------------------------------------------------------------------------------------------------- |
+| **Descrição:** O coordenador deve ser capaz de visualizar a lista de requisições encaminhadas para a coordenação e comissão do seu respectivo curso. Também deve ser possível filtrar as requisições por campos de interesse, como data, semestre, status da requisição e aluno.                                                                                |
+| **Atores:** Coordenador.                                                                                             |
+| **Prioridade:** Média.                                                                                               |
+| **Entrada:** Nenhuma.                                                                                                |
+| **Pré-condições:** O usuário deve estar logado.                                                                      |     
+| **Pós-condições:** Caso selecione alguma requisição, o usuário é redirecionado para tela de requisição selecionada.  |
 
-| RF 028 - Encaminhar requisição para a comissão                                                                                                             |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** O coordenador deve ser capaz de encaminhar a requisição para a comissão do seu curso.                                                       |
-| **Atores:** Coordenador.                                                                                                                                   |
-| **Prioridade:** Alta.                                                                                                                                      |
-| **Entrada:** Não possui entradas.                                                                                                                          |
-| **Pré-condições:** O usuário deve estar logado.                                                                                                            |
-| **Saída:** Confirmação de encaminhamento de requisição.                                                                                                    |
-| **Pós-condições:** O coordenador recebe uma mensagem informando que a requisição foi encaminhada com sucesso e a comissão recebe por e-mail a notificação. |
+| RF 028 - Encaminhar requisição para a comissão                                                        |
+| ----------------------------------------------------------------------------------------------------- |
+| **Descrição:** O coordenador deve ser capaz de encaminhar a requisição para a comissão do seu curso.  |
+| **Atores:** Coordenador.                                                                              |
+| **Prioridade:** Alta.                                                                                 |
+| **Entrada:** Não possui entradas.                                                                     |
+| **Pré-condições:** O usuário deve estar logado.                                                       |
+| **Saída:** Confirmação de encaminhamento de requisição.                                               |
+| **Pós-condições:** O coordenador recebe uma mensagem informando que a requisição foi encaminhada com sucesso e a comissão recebe por e-mail a notificação.                                                                        |
 
-| RF 029 - Assinar documento requisição                                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Descrição:** Antes de deferir ou indeferir uma requisição, o coordenador deve ser capaz de baixar o documento da requisição em sua máquina e submetê-lo assinado ao sistema. |
-| **Atores:** Coordenador.                                                                                                                                                       |
-| **Prioridade:** Alta.                                                                                                                                                          |
-| **Entrada:** O usuário deve submeter o documento assinado.                                                                                                                     |
-| **Pré-condições:** O usuário deve estar logado e selecionar a opção de fazer download do arquivo em PDF, assiná-lo e realizar a submissão.                                     |
-| **Saída:** Confirmação de submissão do documento assinado.                                                                                                                     |
-| **Pós-condições:** O coordenador recebe uma mensagem informando que a requisição foi assinada com sucesso.                                                                     |
+| RF 029 - Assinar documento requisição                                                                          |
+| -------------------------------------------------------------------------------------------------------------- |
+| **Descrição:** Antes de deferir ou indeferir uma requisição, o coordenador deve ser capaz de baixar o documento da requisição em sua máquina e submetê-lo assinado ao sistema.                                                      |
+| **Atores:** Coordenador.                                                                                       |
+| **Prioridade:** Alta.                                                                                          |
+| **Entrada:** O usuário deve submeter o documento assinado.                                                     |
+| **Pré-condições:** O usuário deve estar logado e selecionar a opção de fazer download do arquivo em PDF, assiná-lo e realizar a submissão.                                                                                            |
+| **Saída:** Confirmação de submissão do documento assinado.                                                     |
+| **Pós-condições:** O coordenador recebe uma mensagem informando que a requisição foi assinada com sucesso.     |
 
-| RF 030 - Ratificar requisição                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** O coordenador deve ser capaz de finalizar o fluxo da requisição, deferindo-a ou indeferindo-a.                      |
-| **Atores:** Coordenador                                                                                                            |
-| **Prioridade:** Alta                                                                                                               |
-| **Entrada:** Nenhuma                                                                                                               |
-| **Pré-condições:** O usuário deve estar logado e, em casos de aprovação, a requisição deve ter passado pela comissão.              |
-| **Saída:** Confirmação da ratificação da requisição                                                                                |
-| **Pós-condições:** O coordenador recebe uma mensagem informando que a requisição foi ratificada e encaminhada para a escolaridade. |
+| RF 030 - Ratificar requisição                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------|
+| **Descrição:** O coordenador deve ser capaz de finalizar o fluxo da requisição, deferindo-a ou indeferindo-a.        |
+| **Atores:** Coordenador                                                                                              |
+| **Prioridade:** Alta                                                                                                 |
+| **Entrada:** Nenhuma                                                                                                 |
+| **Pré-condições:** O usuário deve estar logado e, em casos de aprovação, a requisição deve ter passado pela comissão.|
+| **Saída:** Confirmação da ratificação da requisição                                                                  |
+| **Pós-condições:** O coordenador recebe uma mensagem informando que a requisição foi ratificada e encaminhada para a escolaridade.                                                                                                          |
 
 | RF 031 - Atribuir perfil para a comissão                                                       |
 | ---------------------------------------------------------------------------------------------- |
@@ -350,15 +349,15 @@ O coordenador é responsável pelo gerenciamento das requisições. Ele é o pri
 
 A comissão desempenha um papel fundamental na avaliação das requisições de atividades complementares. Sua responsabilidade principal é verificar cuidadosamente os dados da requisição e os certificados apresentados. Além disso, é sua responsabilidade atribuir a quantidade de horas correspondente às atividades e definir o status da requisição como deferido ou indeferido, com base nas informações fornecidas e nos critérios estabelecidos.
 
-| RF 033 - Consultar lista de requisições                                                                                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** A comissão deve ser capaz de visualizar a lista de requisições encaminhadas para a comissão do seu respectivo curso. Também deve ser possível filtrar as requisições por campos de interesse, como data, semestre e aluno. |
-| **Atores:** Comissão.                                                                                                                                                                                                                     |
-| **Prioridade:** Média.                                                                                                                                                                                                                    |
-| **Entrada:** Nenhuma.                                                                                                                                                                                                                     |
-| **Pré-condições:** O usuário deve estar logado.                                                                                                                                                                                           |
-| **Saída:** Não possui saídas.                                                                                                                                                                                                             |
-| **Pós-condições:** Caso selecione alguma requisição, o usuário é redirecionado para a tela de requisição selecionada.                                                                                                                     |
+| RF 033 - Consultar lista de requisições                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------- |
+| **Descrição:** A comissão deve ser capaz de visualizar a lista de requisições encaminhadas para a comissão do seu respectivo curso. Também deve ser possível filtrar as requisições por campos de interesse, como data, semestre e aluno.   |
+| **Atores:** Comissão.                                                                                                   |
+| **Prioridade:** Média.                                                                                                  |
+| **Entrada:** Nenhuma.                                                                                                   |
+| **Pré-condições:** O usuário deve estar logado.                                                                         |
+| **Saída:** Não possui saídas.                                                                                           |
+| **Pós-condições:** Caso selecione alguma requisição, o usuário é redirecionado para a tela de requisição selecionada.   |
 
 | RF 034 - Adicionar quantidade de horas nas atividades complementares                                            |
 | --------------------------------------------------------------------------------------------------------------- |
@@ -370,15 +369,15 @@ A comissão desempenha um papel fundamental na avaliação das requisições de 
 | **Saída:** Confirmação da inserção das horas dos certificados                                                   |
 | **Pós-condições:** O usuário retorna para a tela da requisição                                                  |
 
-| RF 035 - Validar requisição                                                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** A comissão deve ser capaz de finalizar o fluxo da requisição, deferindo-a ou indeferindo-a. Após isso, é submetido para a coordenação realizar a validação final. |
-| **Atores:** Comissão.                                                                                                                                                            |
-| **Prioridade:** Alta.                                                                                                                                                            |
-| **Entrada:** Nenhuma.                                                                                                                                                            |
-| **Pré-condições:** O usuário deve estar logado e, em casos de aprovação, a requisição deve ser enviada para a coordenação.                                                       |
-| **Saída:** Confirmação da ratificação da requisição.                                                                                                                             |
-| **Pós-condições:** O coordenador recebe um e-mail informando que a requisição foi finalizada pela comissão.                                                                      |
+| RF 035 - Validar requisição                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ |
+| **Descrição:** A comissão deve ser capaz de finalizar o fluxo da requisição, deferindo-a ou indeferindo-a. Após isso, é submetido para a coordenação realizar a validação final.                                                       |
+| **Atores:** Comissão.                                                                                        |
+| **Prioridade:** Alta.                                                                                        |
+| **Entrada:** Nenhuma.                                                                                        |
+| **Pré-condições:** O usuário deve estar logado e, em casos de aprovação, a requisição deve ser enviada para a coordenação.                                                                                                   |
+| **Saída:** Confirmação da ratificação da requisição.                                                         |
+| **Pós-condições:** O coordenador recebe um e-mail informando que a requisição foi finalizada pela comissão.  |
 
 ## Requisitos não funcionais
 
@@ -388,53 +387,53 @@ Os requisitos não funcionais fornecem diretrizes e critérios para avaliar a qu
 
 A velocidade de resposta, a capacidade de processamento e a eficiência são fatores críticos que influenciam diretamente a experiência do usuário e o sucesso de um sistema. Logo, os requisitos abaixo definem as métricas de desempenho que deverão ser atingidas para alcançar uma boa usabilidade e experiência do usuário.
 
-| RNF 001 - Tempo de Resposta                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF 001 - Tempo de Resposta                                                               |
+| ----------------------------------------------------------------------------------------- |
 | **Descrição:** O aplicativo deverá apresentar tempos de resposta inferiores a 1000 ms, de forma a apresentar um carregamento suficientemente rápido. |
-| **Prioridade:** Alta.                                                                                                                                |
+| **Prioridade:** Alta.       |
 
-| RNF 002 - Usuários online                                                                                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF 002 - Usuários online                                                                             |
+| ----------------------------------------------------------------------------------------------- |
 | **Descrição:** O aplicativo deve ser altamente eficiente e capaz de gerenciar perfeitamente a conexão de até 100 usuários online simultaneamente, proporcionando uma experiência fluida e sem interrupções para todos os usuários. |
-| **Prioridade:** Alta.                                                                                                                                                                                                              |
+| **Prioridade:** Alta.                                                                                 |
 
 ### Disponibilidade
 
 A disponibilidade é um fator crítico para a confiabilidade e eficácia de um sistema, especialmente em ambientes onde a interrupção de serviços pode resultar em perdas financeiras, danos à reputação e insatisfação dos usuários.Os requisitos a seguir estabelecem métricas que determinam o nível de disponibilidade do sistema, ou seja, a capacidade do sistema de estar prontamente disponível para executar um serviço solicitado por um usuário.
 
-| RNF 003 - Período ativo                                                                                                                                                                                           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF 003 - Período ativo                                                              |
+| ----------------------------------------------------------------------------------- |
 | **Descrição:** O aplicativo deve permanecer online 24 horas por dia, 7 dias por semana, com tolerância a interrupções de no máximo 2 horas em situações excepcionais para manutenções ou atualizações planejadas. |
-| **Prioridade:** Média                                                                                                                                                                                             |
+| **Prioridade:** Média                                                                  |
 
 ### Hardware
 
 É fundamental considerar as características e limitações do hardware que será utilizado, para permitir que os desenvolvedores entendam claramente quais requisitos são necessários para garantir o desempenho, a compatibilidade e a estabilidade do sistema.
 
-| RNF 004 - Compatibilidade                                                                                                                                                                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição:** Para o perfeito funcionamento do sistema, é necessário apenas possuir um navegador com acesso à internet. Essa simplicidade na exigência de recursos garante que o aplicativo seja facilmente acessível e utilizado por uma ampla variedade de usuários. |
-| **Prioridade:** Alta                                                                                                                                                                                                                                                    |
+| RNF 004 - Compatibilidade                        |
+| ------------------------------------------------ |
+| **Descrição:** Para o perfeito funcionamento do sistema, é necessário apenas possuir um navegador com acesso à internet. Essa simplicidade na exigência de recursos garante que o aplicativo seja facilmente acessível e utilizado por uma ampla variedade de usuários.                             |
+| **Prioridade:** Alta                             |
 
 ### Segurança
 
 São descritas as medidas necessárias para proteger o sistema contra ameaças internas e externas, garantindo a confidencialidade, integridade e disponibilidade dos dados. Com isso, garantir que os desenvolvedores compreendam claramente os desafios e requisitos de segurança envolvidos no projeto, fornecendo diretrizes claras para a implementação de medidas de proteção eficazes.
 
-| RNF 005  Criptografia                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| RNF 005  Criptografia             |
+| ------------------------------------------------------------------------------------------------------------ |
 | **Descrição:** O sistema deve priorizar a segurança dos dados e a proteção da privacidade dos usuários, adotando o uso do protocolo HTTPS (Hyper Text Transfer Protocol Secure) como uma camada de criptografia confiável. Ao utilizar o HTTPS, todas as informações transmitidas entre o aplicativo e os usuários serão criptografadas, garantindo a confidencialidade e a integridade dos dados durante a comunicação. |
-| **Prioridade:** Baixa.                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Prioridade:** Baixa.              |
 
-| RNF 006  Autenticação                                                                                                                                                                                                                             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF 006  Autenticação                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de realizar login através de sua conta Google utilizando o serviço SSO (Single Sign-On) da Google além de poder fazer pelo próprio sistema utilizando a lógica de autenticação com Spring security e JWT. |
-| **Prioridade:** Alta.                                                                                                                                                                                                                             |
+| **Prioridade:** Alta.                                                                                                 |
 
 ### Documentação
 
 A documentação de sistemas desempenha um papel fundamental no desenvolvimento, implementação e manutenção eficazes de um software ou sistema. A importância de documentar sistemas reside em fornecer um registro completo e estruturado de informações essenciais sobre o sistema, suas funcionalidades, configurações, requisitos, fluxos de trabalho e outras características relevantes. Abaixo são descritas as documentações de caráter importante para o desenvolvimento do sistema.
 
-| RNF 007  Documentação APIs REST                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RNF 007  Documentação APIs REST                                                                         |
+| --------------------------------------------------------------------------------------------            |
 | **Descrição:** É fundamental que o endpoint do aplicativo seja cuidadosamente documentado, a fim de facilitar integrações futuras com outros sistemas e permitir correções eficientes de implementações no front-end. Nesse sentido, o uso da ferramenta Swagger desempenha um papel crucial. O Swagger proporciona uma abordagem estruturada e padronizada para documentação de API, permitindo que os desenvolvedores compreendam facilmente a funcionalidade e os parâmetros do endpoint. |
-| **Prioridade:** Alta.|
+| **Prioridade:** Alta.                                                                                   |
