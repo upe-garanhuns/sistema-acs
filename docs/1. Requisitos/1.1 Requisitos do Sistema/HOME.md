@@ -396,7 +396,7 @@ A velocidade de resposta, a capacidade de processamento e a eficiência são fat
 
 | RNF 002 - Usuários online                                                                             |
 | ----------------------------------------------------------------------------------------------- |
-| **Descrição:** O aplicativo deve ser altamente eficiente e capaz de gerenciar perfeitamente a conexão de até 100 usuários online simultaneamente, proporcionando uma experiência fluida e sem interrupções para todos os usuários. |
+| **Descrição:** O aplicativo deve ser altamente eficiente e capaz de gerenciar de forma otimizada a conexão de até 100 usuários online simultaneamente, proporcionando uma experiência fluida e sem interrupções para todos os usuários. |
 | **Prioridade:** Alta.                                                                                 |
 
 ### Disponibilidade
@@ -408,28 +408,47 @@ A disponibilidade é um fator crítico para a confiabilidade e eficácia de um s
 | **Descrição:** O aplicativo deve permanecer online 24 horas por dia, 7 dias por semana, com tolerância a interrupções de no máximo 2 horas em situações excepcionais para manutenções ou atualizações planejadas. |
 | **Prioridade:** Média                                                                  |
 
+| RNF 004 - Monitoramento de Tempo de Atividade |
+| ----------------------------------------------|
+| **Descrição:** O usuário deve possuir um tempo limite de uso na aplicação, para evitar a sobrecarga do servidor, sendo este limite um tempo de 1 hora.                 |
+| **Prioridade:** Média                         |
+
 ### Hardware
 
 É fundamental considerar as características e limitações do hardware que será utilizado, para permitir que os desenvolvedores entendam claramente quais requisitos são necessários para garantir o desempenho, a compatibilidade e a estabilidade do sistema.
 
 | RNF 004 - Compatibilidade                        |
 | ------------------------------------------------ |
-| **Descrição:** Para o perfeito funcionamento do sistema, é necessário apenas possuir um navegador com acesso à internet. Essa simplicidade na exigência de recursos garante que o aplicativo seja facilmente acessível e utilizado por uma ampla variedade de usuários.                             |
+| **Descrição:** Para efetivo funcionamento do sistema, é necessário possuir um navegador com acesso à internet, processador com um clock (2 GHz), cache de memória acima de 6MB e processadores quad-core. Essa simplicidade na exigência de recursos garante que o aplicativo seja facilmente acessível e utilizado por uma ampla variedade de usuários.                             |
 | **Prioridade:** Alta                             |
 
 ### Segurança
 
 São descritas as medidas necessárias para proteger o sistema contra ameaças internas e externas, garantindo a confidencialidade, integridade e disponibilidade dos dados. Com isso, garantir que os desenvolvedores compreendam claramente os desafios e requisitos de segurança envolvidos no projeto, fornecendo diretrizes claras para a implementação de medidas de proteção eficazes.
 
-| RNF 005  Criptografia             |
+| RNF 005 - Criptografia             |
 | ------------------------------------------------------------------------------------------------------------ |
 | **Descrição:** O sistema deve priorizar a segurança dos dados e a proteção da privacidade dos usuários, adotando o uso do protocolo HTTPS (Hyper Text Transfer Protocol Secure) como uma camada de criptografia confiável. Ao utilizar o HTTPS, todas as informações transmitidas entre o aplicativo e os usuários serão criptografadas, garantindo a confidencialidade e a integridade dos dados durante a comunicação. |
 | **Prioridade:** Baixa.              |
 
-| RNF 006  Autenticação                                                                                                |
+| RNF 006 - Autenticação                                                                                                |
 | ------------------------------------------------------------------------------------------------------------------- |
 | **Descrição:** O usuário deve ser capaz de realizar login através de sua conta Google utilizando o serviço SSO (Single Sign-On) da Google além de poder fazer pelo próprio sistema utilizando a lógica de autenticação com Spring security e JWT. |
 | **Prioridade:** Alta.                                                                                                 |
+
+| RNF 007 - Controle de Acesso                                  |
+| ------------------------------------------------------------- |
+| **Descrição:** O sistema deve possuir um controle de acesso dos usuários para evitar que informações ou funcionalidades de grau maior não sejam utilizadas por usuários com poderio menor. |
+| **Prioridade:** Alta.                                         |
+
+### Suporte
+
+O Suporte tem um papel importante em um sistema devido ao número de dúvidas ou problemas que o mesmo não tem capacidade de solucionar, então sistema deve ter um suporte adequado para resolver problemas e fornecer assistência aos usuários. 
+
+| RNF 007 - Help Desk   |
+| --------------------- |
+| **Descrição:** O sistema deve possuir um canal, um e-mail, para o relato de problemas do usuário na utilização do sistema.  |
+| **Prioridade:** Baixa |
 
 ### Documentação
 
