@@ -2,8 +2,12 @@
 
 [*] -> EmRascunho : Requisicao Criada
 EmRascunho --> EmSubmissao : Requisicao submetida
+EmRascunho --> DeletandoRascunho : Rascunho Excluido
+DeletandoRascunho -> [*]
 EmSubmissao -> EmAnaliseCoordenacao : Requisicao encaminhada\npara coordenacao
 EmAnaliseCoordenacao -> EmAnaliseComissao : Enviado\npara comissao
+EmAnaliseCoordenacao --> CorrigindoRequisicao : Erro Encontrado na Requisição
+CorrigindoRequisicao --> EmAnaliseCoordenacao : Requisicao Corrigida
 EmAnaliseComissao -> EmAnaliseCoordenacao : Analisado\npela comissao
 EmAnaliseCoordenacao --> EncaminhadoParaEscolaridade : AnalisadoCoordenacao
 EncaminhadoParaEscolaridade --> EmRecurso : Pedido de\ncontagem

@@ -1,7 +1,11 @@
 @startuml Certificado
+
 [*] -> Anexado : Associado a\nrequisicao
 Anexado --> AguardandoAnalise : Submissão\nda requisicao\ncom certificados
-AguardandoAnalise -> EmAnalise : Encaminhamento para\nCoordenação
-EmAnalise --> Recusado : Certificado recusado 
-EmAnalise -> Aceito : Certificado aceito
+AguardandoAnalise -> RequisiçãoEmAnalise : Encaminhamento para\nCoordenação
+RequisiçãoEmAnalise -> Recusado : Certificado recusado 
+RequisiçãoEmAnalise -> Aceito : Certificado aceito
+RequisiçãoEmAnalise -> ContagemDeHorasEmAnalise : Encaminhamento da Requisição\n com Certificado
+ContagemDeHorasEmAnalise --> RequisiçãoEmAnalise : Contagem finalizada
+
 @enduml
