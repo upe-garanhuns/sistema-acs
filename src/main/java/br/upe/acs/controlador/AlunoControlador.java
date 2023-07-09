@@ -1,8 +1,14 @@
 package br.upe.acs.controlador;
 
 import br.upe.acs.controlador.respostas.AlunoResposta;
+import br.upe.acs.dominio.Aluno;
 import br.upe.acs.utils.AcsExcecao;
+import br.upe.acs.utils.EmailUtils;
+import br.upe.acs.utils.TokenUtils;
 import io.swagger.v3.oas.annotations.Operation;
+
+import java.time.LocalDateTime;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,5 +49,52 @@ public class AlunoControlador {
         }
 
         return resposta;
+    }
+    
+    @Operation(summary = "Recuperar senha")
+    @GetMapping("/recuperar-senha")
+    public ResponseEntity<?> recuperarSenha(@RequestParam("email") String email) {
+        Aluno aluno = servico.buscarAlunoPorEmail(email).orElse(null);
+
+        if (aluno != null) {
+            String token = TokenUtils.gerarToken();
+            LocalDateTime dataExpiracao = LocalDateTime.now().plusMinutes(5);
+
+            EmailUtils.enviarEmailRecuperacaoSenha(aluno.getEmail(), token);
+
+            return ResponseEntity.ok().build();
+        }
+
+        return ResponseEntity.notFound().build();
+    }
+    
+
+    @Operation(summary = "Redefinir senha")
+    @PostMapping("/recuperar-senha")
+    public ResponseEntity<?> redefinirSenha(
+            @RequestParam("token") String token,
+            @RequestParam("novaSenha") String novaSenha,
+            @RequestParam("confirmarNovaSenha") String confirmarNovaSenha) {
+
+        Aluno aluno = servico.buscarAlunoPorToken(token).orElse(null);
+
+        if (aluno != null && aluno.getDataExpiracaoToken().isAfter(LocalDateTime.now())) {
+            if (novaSenha.equals(confirmarNovaSenha)) {
+                if (novaSenha.length() >= 8 && novaSenha.length() <= 16) {
+                    aluno.setSenha(novaSenha);
+                    aluno.setTokenRecuperacaoSenha(null);
+                    aluno.setDataExpiracaoToken(null);
+                    servico.salvarAluno(aluno);
+
+                    return ResponseEntity.ok().build();
+                } else {
+                    return ResponseEntity.badRequest().build();
+                }
+            } else {
+                return ResponseEntity.badRequest().build();
+            }
+        }
+
+        return ResponseEntity.notFound().build();
     }
 }

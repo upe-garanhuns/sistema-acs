@@ -1,5 +1,6 @@
 package br.upe.acs.dominio;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -41,6 +42,10 @@ public class Usuario implements UserDetails {
 	@ManyToOne
 	private Curso curso;
 
+	private String tokenRecuperacaoSenha;
+
+	private LocalDateTime dataExpiracaoToken;
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return List.of(new SimpleGrantedAuthority(perfil.name()));
@@ -75,4 +80,31 @@ public class Usuario implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
+	
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setTokenRecuperacaoSenha(String token) {
+        this.tokenRecuperacaoSenha = token;
+    }
+
+    public void setDataExpiracaoToken(LocalDateTime dataExpiracao) {
+        this.dataExpiracaoToken = dataExpiracao;
+    }
+    
+    public LocalDateTime getDataExpiracaoToken() {
+        return dataExpiracaoToken;
+    }
+    
+    public boolean isTokenRecuperacaoSenhaValido() {
+        return tokenRecuperacaoSenha != null && dataExpiracaoToken != null && dataExpiracaoToken.isAfter(LocalDateTime.now());
+    }
+
+    
+    public String getEmail() {
+        return email;
+    }
+
+
 }

@@ -39,4 +39,16 @@ public class AlunoServico {
 
 		return resposta;
 	}
+	
+    public Optional<Aluno> buscarAlunoPorEmail(String email) {
+        return repositorio.findByEmail(email);
+    }
+    
+    public Optional<Aluno> buscarAlunoPorToken(String token) {
+        return repositorio.findByTokenRecuperacaoSenha(token);
+    }
+    
+    public void salvarAluno(Aluno aluno) {
+        repositorio.save(aluno);
+    }
 }
