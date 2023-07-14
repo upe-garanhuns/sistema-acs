@@ -13,8 +13,8 @@ public class EmailUtils {
 
 	private static final String EMAIL_HOST = "smtp.gmail.com";
 	private static final String EMAIL_PORT = "587";
-	private static final String EMAIL_USERNAME = "seu-email@gmail.com";
-	private static final String EMAIL_PASSWORD = "sua-senha";
+	private static final String EMAIL_USERNAME = "email@gmail.com";
+	private static final String EMAIL_PASSWORD = "senha";
 	
 	 public static void enviarEmailRecuperacaoSenha(String email, String token) {
 	        String assunto = "Recuperação de Senha";

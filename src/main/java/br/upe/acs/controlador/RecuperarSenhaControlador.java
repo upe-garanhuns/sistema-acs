@@ -38,7 +38,7 @@ public class RecuperarSenhaControlador {
 
             EmailUtils.enviarEmailRecuperacaoSenha(aluno.getEmail(), token);
 
-            return ResponseEntity.ok(new RespostaPadrao("Email de recuperação de senha enviado com sucesso!"));
+            return ResponseEntity.ok(new RespostaPadrao(token));
         }
 
         return ResponseEntity.notFound().build();
