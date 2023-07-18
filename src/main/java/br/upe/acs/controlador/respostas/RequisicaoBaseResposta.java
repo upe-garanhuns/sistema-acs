@@ -22,7 +22,7 @@ public class RequisicaoBaseResposta {
     public RequisicaoBaseResposta(Requisicao requisicao) {
         this.id = requisicao.getId();
         this.status = requisicao.getStatusRequisicao().name();
-        DataDaSolicitacao = requisicao.getData();
+        DataDaSolicitacao = requisicao.getDataDeSubmissao();
         this.quantidadeDeHoras = requisicao.getCertificados().stream().mapToInt(Certificado::getQuantidadeDeHoras).sum();
     }
 

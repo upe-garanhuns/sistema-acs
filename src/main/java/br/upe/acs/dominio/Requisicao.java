@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 public class Requisicao extends RequisicaoBase {
 
 	@Temporal(TemporalType.DATE)
-	private Date data;
+	private Date dataDeSubmissao;
 	
 	@Column(columnDefinition = "TEXT")
 	private String observacao;

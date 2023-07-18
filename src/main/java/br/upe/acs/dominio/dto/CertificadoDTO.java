@@ -13,13 +13,13 @@ public class CertificadoDTO {
 	
 	private String descricao;
 	
-	private String observacao;
+	private String dataInicial;
+
+	private String dataFinal;
 	
-	private String data;
-	
-	private Integer horas;
+	private Integer quantidadeDeHoras;
 	
 	private Long atividadeId;
-	
+
 	private Long requisicaoId;
 }

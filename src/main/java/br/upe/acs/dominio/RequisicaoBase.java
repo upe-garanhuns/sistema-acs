@@ -17,8 +17,6 @@ public abstract class RequisicaoBase {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private int semestre;
-
     private int qtdCertificados;
 
 }

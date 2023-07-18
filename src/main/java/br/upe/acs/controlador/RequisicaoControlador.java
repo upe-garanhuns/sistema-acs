@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import br.upe.acs.config.JwtService;
 import br.upe.acs.dominio.dto.RequisicaoRascunhoDTO;
 
 import org.springframework.http.*;
@@ -37,6 +38,8 @@ import lombok.RequiredArgsConstructor;
 public class RequisicaoControlador {
 
     private final RequisicaoServico servico;
+
+    private final JwtService jwtService;
 
     private final RequisicaoCertificadoServico requisicaoCertificadoServico;
     
@@ -80,25 +83,20 @@ public class RequisicaoControlador {
 
     @Operation(summary = "Adicionar requisição com certificados")
     @PostMapping(consumes = {"multipart/form-data"})
-    public ResponseEntity<?> adicionarRequisicao(@RequestParam(value = "usuarioId") Long usuarioId,
-                                                 @RequestParam(value = "cursoId") Long cursoId,
-                                                 @RequestParam(value = "semestre") int semestre,
-                                                 @RequestParam(value = "qtdCertificados") int qtdCertificados,
-                                                 @RequestParam(value = "observacao") String observacao,
-                                                 @RequestPart(value = "certificados") MultipartFile[] certificados,
-                                                 @RequestPart(value = "certificadosMetadados") MultipartFile certificadosMetadados) {
+    public ResponseEntity<?> adicionarRequisicao(
+            HttpServletRequest request,
+            @RequestParam(value = "qtdCertificados") int qtdCertificados,
+            @RequestPart(value = "certificados") MultipartFile[] certificados,
+            @RequestPart(value = "certificadosMetadados") MultipartFile certificadosMetadados) {
+        String email = jwtService.extractUsername(request.getHeader("Authorization").substring(7));
         RequisicaoDTO requisicaoDTO = new RequisicaoDTO();
-        requisicaoDTO.setCursoId(cursoId);
-        requisicaoDTO.setUsuarioId(usuarioId);
-        requisicaoDTO.setSemestre(semestre);
         requisicaoDTO.setQtdCertificados(qtdCertificados);
-        requisicaoDTO.setObservacao(observacao);
         requisicaoDTO.setCertificados(certificados);
         requisicaoDTO.setCertificadosMetadados(certificadosMetadados);
 
         ResponseEntity<?> resposta;
         try {
-            resposta = ResponseEntity.ok(requisicaoCertificadoServico.adicionarRequisicao(requisicaoDTO));
+            resposta = ResponseEntity.ok(requisicaoCertificadoServico.adicionarRequisicao(requisicaoDTO, email));
         } catch (Exception e) {
             resposta = ResponseEntity.badRequest().body(e.getMessage());
         }

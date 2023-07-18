@@ -10,8 +10,6 @@ public class RequisicaoRascunhoResposta {
 
     private final Long id;
 
-    private final int semestre;
-
     private final int qtdCertificados;
 
     private final String requisicaoStatus = "RASCUNHO";
@@ -20,7 +18,6 @@ public class RequisicaoRascunhoResposta {
 
     public RequisicaoRascunhoResposta(RequisicaoRascunho requisicaoRascunho) {
         this.id = requisicaoRascunho.getId();
-        this.semestre = requisicaoRascunho.getSemestre();
         this.qtdCertificados = requisicaoRascunho.getQtdCertificados();
         this.certificados = requisicaoRascunho.getCertificadosRascunho().stream().map(CertificadoRascunhoResposta::new).toList();
     }

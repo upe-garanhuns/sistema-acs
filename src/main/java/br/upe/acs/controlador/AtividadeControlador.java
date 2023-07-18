@@ -36,7 +36,7 @@ public class AtividadeControlador {
     public ResponseEntity<?> buscarAtividadePorId(@PathVariable("id") Long id) {
         ResponseEntity<?> resposta;
         try {
-            AtividadeResposta atividadeResposta = new AtividadeResposta(servico.buscarAtividadePorId(id).orElseThrow());
+            AtividadeResposta atividadeResposta = new AtividadeResposta(servico.buscarAtividadePorId(id));
             resposta = ResponseEntity.ok(atividadeResposta);
         } catch (AcsExcecao e) {
             resposta = ResponseEntity.badRequest().body(e.getMessage());

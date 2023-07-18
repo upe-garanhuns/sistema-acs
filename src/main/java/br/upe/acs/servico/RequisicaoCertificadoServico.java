@@ -46,7 +46,6 @@ public class RequisicaoCertificadoServico {
         CertificadosMetadadosDTO certificadosMetadados = converterCertificadosMetadados(requisicaoRascunho.getCertificadosMetadados());
 
         RequisicaoRascunho rascunhoSalvar = new RequisicaoRascunho();
-        rascunhoSalvar.setSemestre(requisicaoRascunho.getSemestre());
         rascunhoSalvar.setQtdCertificados(requisicaoRascunho.getQtdCertificados());
         rascunhoSalvar.setUsuarioId(requisicaoRascunho.getUsuarioId());
         rascunhoSalvar.setCursoId(requisicaoRascunho.getCursoId());
@@ -83,7 +82,6 @@ public class RequisicaoCertificadoServico {
     	CertificadosMetadadosDTO certificadosMetadados = converterCertificadosMetadados(requisicaoRascunho.getCertificadosMetadados());
     	rascunho.setCursoId(requisicaoRascunho.getCursoId());
     	rascunho.setQtdCertificados(requisicaoRascunho.getQtdCertificados());
-    	rascunho.setSemestre(requisicaoRascunho.getSemestre());
     	rascunho.setDataExpiracao(null);
     	    	
         	
@@ -106,23 +104,21 @@ public class RequisicaoCertificadoServico {
     	
     }
 
-    public String adicionarRequisicao(RequisicaoDTO requisicao) throws Exception {
-        Curso cursoSalvar = cursoServico.buscarCursoPorId(requisicao.getCursoId()).orElseThrow();
-        Aluno alunoSalvar = alunoServico.buscarAlunoPorId(requisicao.getUsuarioId()).orElseThrow();
+    public String adicionarRequisicao(RequisicaoDTO requisicao, String email) throws Exception {
+        Aluno alunoSalvar = alunoServico.buscarAlunoPorEmail(email);
+        Curso cursoSalvar = alunoSalvar.getCurso();
         CertificadosMetadadosDTO certificadosMetadados = converterCertificadosMetadados(requisicao.getCertificadosMetadados());
 
         validarRequisicao(requisicao, certificadosMetadados.getCertificados());
         Requisicao requisicaoSalvar = new Requisicao();
-        requisicaoSalvar.setData(obterDataAtual());
-        requisicaoSalvar.setSemestre(requisicao.getSemestre());
+        requisicaoSalvar.setDataDeSubmissao(obterDataAtual());
         requisicaoSalvar.setQtdCertificados(requisicao.getQtdCertificados());
         requisicaoSalvar.setStatusRequisicao(RequisicaoStatusEnum.ENCAMINHADO_COORDENACAO);
         requisicaoSalvar.setCurso(cursoSalvar);
         requisicaoSalvar.setAluno(alunoSalvar);
-        requisicaoSalvar.setObservacao(requisicao.getObservacao());
 
         Requisicao requisicaoSalva = repositorio.save(requisicaoSalvar);
-
+        //TODO AS: Apagar a requisição quando certificados não criados
         MultipartFile[] certificadoArquivos = requisicao.getCertificados();
         List<CertificadoDTO> certificados = certificadosMetadados.getCertificados();
         adicionarCertificados(certificadoArquivos, certificados, requisicaoSalva.getId());
@@ -138,10 +134,6 @@ public class RequisicaoCertificadoServico {
         boolean isValid = true;
         String mensagem = "";
 
-        if (requisicao.getSemestre() <= 0 || requisicao.getSemestre() > 2) {
-            isValid = false;
-            mensagem += "O semestre informado não é válido/";
-        }
         if (requisicao.getQtdCertificados() <= 0 || requisicao.getQtdCertificados() > 20) {
             isValid = false;
             mensagem += "A quantidade de certificados informada não é válida/";
@@ -227,9 +219,9 @@ public class RequisicaoCertificadoServico {
 
             if (certificado.getDescricao().isBlank()) {
                 isValid = false;
-            } else if (!verificarData(certificado.getData())) {
+            } else if (!verificarData(certificado.getDataFinal())) {
                 isValid = false;
-            } else if (certificado.getHoras() <= 1) {
+            } else if (certificado.getQuantidadeDeHoras() <= 0) {
                 isValid = false;
             } else if (!verificarAtividade(certificado.getAtividadeId())) {
                 isValid = false;

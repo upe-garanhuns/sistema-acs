@@ -16,7 +16,11 @@ public class CertificadoResposta {
 	
 	private final String descricao;
 	
-	private final Date data;
+	private final Date dataInicial;
+
+	private final Date dataFinal;
+
+	private final Date dataDeSubmissao;
 
 	private final EixoEnum eixoAtividade;
 
@@ -37,7 +41,9 @@ public class CertificadoResposta {
 		this.id = certificado.getId();
 		this.titulo = certificado.getTitulo();
 		this.descricao = certificado.getDescricao();
-		this.data = certificado.getDataInicial();
+		this.dataInicial = certificado.getDataInicial();
+		this.dataFinal = certificado.getDataFinal();
+		this.dataDeSubmissao = certificado.getDataDeSubmissao();
 		this.horas = certificado.getQuantidadeDeHoras();
 		this.chMaxima = certificado.getChMaxima();
 		this.chTotal = certificado.getChTotal();

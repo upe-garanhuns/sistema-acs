@@ -41,19 +41,20 @@ public class CertificadoServico {
 		Certificado certificadoSalvar = new Certificado();
 		certificadoSalvar.setTitulo(certificado.getTitulo());
 		certificadoSalvar.setDescricao(certificado.getDescricao());
-		certificadoSalvar.setDataInicial(converterParaData(certificado.getData()));
-		certificadoSalvar.setQuantidadeDeHoras(certificado.getHoras());
+		certificadoSalvar.setDataInicial(converterParaData(certificado.getDataInicial()));
+		certificadoSalvar.setDataFinal(converterParaData(certificado.getDataFinal()));
+		certificadoSalvar.setQuantidadeDeHoras(certificado.getQuantidadeDeHoras());
+		certificadoSalvar.setDataDeSubmissao(new Date());
 		certificadoSalvar.setChTotal(0);
 		certificadoSalvar.setCertificado(certificadoArquivo);
-		certificadoSalvar.setObservacao(certificado.getObservacao());
-		certificadoSalvar.setStatusCertificado(CertificadoStatusEnum.ENCAMINHADO_ESCOLARIDADE);
+		certificadoSalvar.setStatusCertificado(CertificadoStatusEnum.ENCAMINHADO_COORDENACAO);
 
 		Requisicao requisicaoSalvar = requisicaoServico.buscarRequisicaoPorId(certificado.getRequisicaoId());
 		certificadoSalvar.setRequisicao(requisicaoSalvar);
 
-		Optional<Atividade> atividadeSalvar = atividadeServico.buscarAtividadePorId(certificado.getAtividadeId());
-		certificadoSalvar.setAtividade(atividadeSalvar.orElseThrow());
-		certificadoSalvar.setChMaxima(atividadeSalvar.get().getChMaxima());
+		Atividade atividadeSalvar = atividadeServico.buscarAtividadePorId(certificado.getAtividadeId());
+		certificadoSalvar.setAtividade(atividadeSalvar);
+		certificadoSalvar.setChMaxima(atividadeSalvar.getChMaxima());
 
 		repositorio.save(certificadoSalvar);
 	}

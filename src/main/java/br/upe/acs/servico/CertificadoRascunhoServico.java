@@ -36,8 +36,8 @@ public class CertificadoRascunhoServico {
             certificadoRascunhoSalvar.setDescricao(certificado.getDescricao());
         }
 
-        if (certificado.getHoras() != null) {
-            certificadoRascunhoSalvar.setQuantidadeDeHoras(certificado.getHoras());
+        if (certificado.getQuantidadeDeHoras() != null) {
+            certificadoRascunhoSalvar.setQuantidadeDeHoras(certificado.getQuantidadeDeHoras());
         }
         if (arquivo != null) {
             byte[] certificadoArquivo = arquivo.getBytes();

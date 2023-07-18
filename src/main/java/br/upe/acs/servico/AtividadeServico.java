@@ -20,11 +20,12 @@ public class AtividadeServico {
 		return repositorio.findAll();
 	}
 	
-	public Optional<Atividade> buscarAtividadePorId(Long id) throws AcsExcecao {
-		if (repositorio.findById(id).isEmpty()) {
+	public Atividade buscarAtividadePorId(Long id) throws AcsExcecao {
+		Optional<Atividade> atividade = repositorio.findById(id);
+		if (atividade.isEmpty()) {
 			throw new AcsExcecao("Não existe uma atividade associada a este id!");
 		}
 		
-		return repositorio.findById(id);
+		return atividade.get();
 	}
 }

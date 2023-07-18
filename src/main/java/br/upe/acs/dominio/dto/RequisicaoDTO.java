@@ -11,15 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class RequisicaoDTO {
 	
-	private int semestre;
-	
 	private int qtdCertificados;
-	
-	private String observacao;
-	
-	private Long cursoId;
-	
-	private Long usuarioId;
 	
 	private MultipartFile[] certificados;
 	

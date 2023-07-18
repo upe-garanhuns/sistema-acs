@@ -112,10 +112,10 @@ public class RequisicaoServico {
 
 		contexto.setVariable("protocolo", requisicao.getToken());
 		contexto.setVariable("cpf", requisicao.getAluno().getCpf());
-		contexto.setVariable("data", requisicao.getData().toString());
+		contexto.setVariable("data", requisicao.getDataDeSubmissao().toString());
 		contexto.setVariable("nome", requisicao.getAluno().getNomeCompleto());
 		contexto.setVariable("curso", requisicao.getAluno().getCurso().getNome());
-		contexto.setVariable("periodo", requisicao.getSemestre());
+		contexto.setVariable("periodo", requisicao.getAluno().getPeriodo());
 		contexto.setVariable("rua", requisicao.getAluno().getEndereco().getRua());
 		contexto.setVariable("bairro", requisicao.getAluno().getEndereco().getBairro());
 		contexto.setVariable("numero", requisicao.getAluno().getEndereco().getNumero());

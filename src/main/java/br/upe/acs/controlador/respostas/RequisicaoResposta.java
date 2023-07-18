@@ -21,9 +21,9 @@ public class RequisicaoResposta {
 	@Temporal(TemporalType.DATE)
 	private final Date data;
 	
-	private final int semestre;
-	
 	private final int qtdCertificados;
+
+	private final int quantidadeDeHoras;
 	
 	private final String token;
 
@@ -39,9 +39,9 @@ public class RequisicaoResposta {
 	public RequisicaoResposta(Requisicao requisicao) {
 		super();
 		this.id = requisicao.getId();
-		this.data = requisicao.getData();
-		this.semestre = requisicao.getSemestre();
+		this.data = requisicao.getDataDeSubmissao();
 		this.qtdCertificados = requisicao.getQtdCertificados();
+		this.quantidadeDeHoras = requisicao.getCertificados().stream().mapToInt(Certificado::getQuantidadeDeHoras).sum();
 		this.token = requisicao.getToken();
 		this.requisicaoStatus = requisicao.getStatusRequisicao();
 		this.requisicaoArquivo = requisicao.getRequisicaoArquivoAssinada();

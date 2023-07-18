@@ -22,7 +22,7 @@ public class AlunoServico {
 
 	public Optional<Aluno> buscarAlunoPorId(Long id) throws AcsExcecao {
 		if (repositorio.findById(id).isEmpty()) {
-			throw new AcsExcecao("Não existe um usuário associado a este id!");
+			throw new AcsExcecao("Não existe um aluno associado a este id!");
 		}
 
 		return repositorio.findById(id);
@@ -31,7 +31,7 @@ public class AlunoServico {
 	public Aluno buscarAlunoPorEmail(String email) throws AcsExcecao {
 		Optional<Aluno> aluno = repositorio.findByEmail(email);
 		if (aluno.isEmpty()) {
-			throw new AcsExcecao("Não existe um usuário associado a este email!");
+			throw new AcsExcecao("Não existe um aluno associado a este email!");
 		}
 
 		return aluno.get();
