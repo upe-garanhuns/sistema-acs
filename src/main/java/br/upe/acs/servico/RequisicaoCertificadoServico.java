@@ -100,8 +100,7 @@ public class RequisicaoCertificadoServico {
         	rascunhoVO.setQtdCertificados(requisicaoRascunho.getQtdCertificados());       
 
         	adicionarCertificadosRascunho(rascunhoVO);   		
-    	}	
-    	
+    	}	  	
     	 
     	
     }
