@@ -26,6 +26,8 @@ public class RequisicaoResposta {
 	private final int qtdCertificados;
 	
 	private final String token;
+
+	private final String observacao;
 	
 	@Enumerated(EnumType.STRING)
 	private final RequisicaoStatusEnum requisicaoStatus;
@@ -44,6 +46,7 @@ public class RequisicaoResposta {
 		this.requisicaoStatus = requisicao.getStatusRequisicao();
 		this.requisicaoArquivo = requisicao.getRequisicaoArquivoAssinada();
 		this.certificados = converterCertificados(requisicao.getCertificados());
+		this.observacao = requisicao.getObservacao();
 	}
 	
 	private List<CertificadoResposta> converterCertificados(List<Certificado> certificados) {

@@ -1,6 +1,7 @@
 package br.upe.acs.servico;
 
 import br.upe.acs.dominio.dto.ViaCepDTO;
+import br.upe.acs.utils.CepInvalidoExcecao;
 import org.springframework.stereotype.Service;
 
 import br.upe.acs.dominio.Endereco;
@@ -27,10 +28,14 @@ public class EnderecoServico {
 		return repositorio.save(enderecoSalvar);
 	}
 
-	public ViaCepDTO buscarEnderecoPorCep(String cep) {
-		ViaCepDTO viaCepDTO = new RestTemplate().getForEntity(String.format("https://viacep.com.br/ws/%s/json/", cep), ViaCepDTO.class).getBody();
+	public ViaCepDTO buscarEnderecoPorCep(String cep) throws CepInvalidoExcecao {
+		ViaCepDTO viaCepDTO;
 
-		assert viaCepDTO != null;
+		try {
+			viaCepDTO = new RestTemplate().getForEntity(String.format("https://viacep.com.br/ws/%s/json/", cep), ViaCepDTO.class).getBody();
+		} catch (Exception e) {
+			throw new CepInvalidoExcecao("CEP inválido!");
+		}
 
 		return viaCepDTO;
 	}

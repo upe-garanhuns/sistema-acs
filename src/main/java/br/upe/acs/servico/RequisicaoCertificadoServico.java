@@ -1,5 +1,6 @@
 package br.upe.acs.servico;
 
+import br.upe.acs.config.JwtService;
 import br.upe.acs.dominio.Aluno;
 import br.upe.acs.dominio.Curso;
 import br.upe.acs.dominio.Requisicao;
@@ -24,6 +25,7 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 @Service
@@ -37,6 +39,8 @@ public class RequisicaoCertificadoServico {
     private final AtividadeServico atividadeServico;
     private final RequisicaoRepositorio repositorio;
     private final RequisicaoRascunhoRepositorio rascunhoRepositorio;
+    private final RequisicaoRascunhoServico rascunhoServico;
+    private final JwtService jwtService;
 
     public void salvarRascunho(RequisicaoRascunhoDTO requisicaoRascunho) throws AcsExcecao, IOException, ParseException {
         CertificadosMetadadosDTO certificadosMetadados = converterCertificadosMetadados(requisicaoRascunho.getCertificadosMetadados());
@@ -61,6 +65,46 @@ public class RequisicaoCertificadoServico {
 
        adicionarCertificadosRascunho(rascunhoVO);
     }
+    
+    public void editarRequisicaoRascunho(Long id, String token, RequisicaoRascunhoDTO requisicaoRascunho) throws AcsExcecao, IOException, ParseException{
+    	RequisicaoRascunho rascunho = rascunhoServico.buscarRequisicaoRascunhoPorId(id).orElseThrow();
+    	String usuario = jwtService.extractUsername(token);
+    	Aluno autor = alunoServico.buscarAlunoPorId(rascunho.getUsuarioId()).orElseThrow();
+    	
+    	if(!Objects.equals(autor.getEmail(), usuario)) {
+    		throw new AcsExcecao("Você não possui autorização para editar esse rascunho");
+    	}
+    	
+    	if(!autor.isVerificado()) {
+    		throw new AcsExcecao("Sua conta não foi verificada");
+    	}
+
+    	
+    	CertificadosMetadadosDTO certificadosMetadados = converterCertificadosMetadados(requisicaoRascunho.getCertificadosMetadados());
+    	rascunho.setCursoId(requisicaoRascunho.getCursoId());
+    	rascunho.setQtdCertificados(requisicaoRascunho.getQtdCertificados());
+    	rascunho.setSemestre(requisicaoRascunho.getSemestre());
+    	rascunho.setDataExpiracao(null);
+    	    	
+        	
+    	
+    	if(requisicaoRascunho.getCertificadoArquivos() != null) {
+    		MultipartFile[] certificadoArquivosRascunho = requisicaoRascunho.getCertificadoArquivos();
+    		
+    		List<CertificadoDTO> certificadosRascunho = certificadosMetadados.getCertificados();  
+    		
+        	RascunhoVO rascunhoVO = new RascunhoVO();
+        	rascunhoVO.setCertificadoArquivos(certificadoArquivosRascunho);
+        	rascunhoVO.setCertificados(certificadosRascunho);
+        	rascunhoVO.setIdRequisicao(rascunho.getId());
+        	rascunhoVO.setQtdCertificados(requisicaoRascunho.getQtdCertificados());       
+
+        	adicionarCertificadosRascunho(rascunhoVO);   		
+    	}	
+    	
+    	 
+    	
+    }
 
     public String adicionarRequisicao(RequisicaoDTO requisicao) throws Exception {
         Curso cursoSalvar = cursoServico.buscarCursoPorId(requisicao.getCursoId()).orElseThrow();
@@ -75,6 +119,7 @@ public class RequisicaoCertificadoServico {
         requisicaoSalvar.setStatusRequisicao(RequisicaoStatusEnum.ENCAMINHADO_COORDENACAO);
         requisicaoSalvar.setCurso(cursoSalvar);
         requisicaoSalvar.setAluno(alunoSalvar);
+        requisicaoSalvar.setObservacao(requisicao.getObservacao());
 
         Requisicao requisicaoSalva = repositorio.save(requisicaoSalvar);
 

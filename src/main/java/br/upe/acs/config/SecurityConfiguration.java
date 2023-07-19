@@ -26,7 +26,7 @@ public class SecurityConfiguration {
 			.csrf(csrf -> csrf.disable())
 			.authorizeHttpRequests(authorizeRequests ->
 				authorizeRequests
-					.requestMatchers("/api/acesso/auth/**", "/v3/**", "/swagger-ui/**").permitAll()
+					.requestMatchers("/api/acesso/auth/**", "/v3/**", "/swagger-ui/**", "/api/endereco/**").permitAll()
 					.anyRequest().authenticated()
 			)
 			.sessionManagement(sessionManagement ->
@@ -34,8 +34,14 @@ public class SecurityConfiguration {
 			)
 			.authenticationProvider(authenticationProvider)
 			.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-			.cors(cors -> cors.disable());
-		
+			.cors(cors -> {
+				try {
+					cors.init(http);
+				} catch (Exception e) {
+					throw new RuntimeException(e);
+				}
+			});
+
 		return http.build();
 	}
 }

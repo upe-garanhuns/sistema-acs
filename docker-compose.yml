@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  backend: 
+    build: .
+    ports: 
+      - 8080:8080
+    depends_on:
+      - db
+    env_file:
+      - .env
+  db:
+    image: postgres:alpine
+    ports:
+      - 5430:5432
+    container_name: acs_db
+    restart: always
+    volumes:
+      - acs_database:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  acs_database:

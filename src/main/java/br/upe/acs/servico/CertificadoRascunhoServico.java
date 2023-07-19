@@ -35,15 +35,13 @@ public class CertificadoRascunhoServico {
         if (certificado.getDescricao() != null) {
             certificadoRascunhoSalvar.setDescricao(certificado.getDescricao());
         }
-        if (certificado.getData() != null) {
-            certificadoRascunhoSalvar.setData(converterParaData(certificado.getData()));
-        }
+
         if (certificado.getHoras() != null) {
-            certificadoRascunhoSalvar.setHoras(certificado.getHoras());
+            certificadoRascunhoSalvar.setQuantidadeDeHoras(certificado.getHoras());
         }
         if (arquivo != null) {
             byte[] certificadoArquivo = arquivo.getBytes();
-            certificadoRascunhoSalvar.setCertificadoArquivo(certificadoArquivo);
+            certificadoRascunhoSalvar.setCertificado(certificadoArquivo);
         }
         if (certificado.getAtividadeId() != null) {
             Optional<Atividade> atividadeSalvar = atividadeRepositorio.findById(certificado.getAtividadeId());

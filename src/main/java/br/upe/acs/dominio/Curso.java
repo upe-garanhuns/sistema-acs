@@ -22,6 +22,8 @@ public class Curso {
 	private Long id;
 	
 	private String nome;
+
+	private int horasComplementares;
 	
 	@OneToMany(mappedBy = "curso")
 	private List<Requisicao> requisicoes;

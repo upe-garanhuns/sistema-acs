@@ -15,6 +15,8 @@ public class RequisicaoRascunhoDTO {
     private int qtdCertificados;
 
     private Long usuarioId;
+    
+    private String observacao;
 
     private Long cursoId;
 

@@ -1,6 +1,7 @@
 package br.upe.acs.config;
 
 import br.upe.acs.dominio.Usuario;
+import br.upe.acs.interceptador.InterceptadorVerficacao;
 import br.upe.acs.repositorio.AdministradorRepositorio;
 import br.upe.acs.repositorio.AlunoRepositorio;
 import br.upe.acs.repositorio.ComissaoRepositorio;
@@ -16,15 +17,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @RequiredArgsConstructor
-public class ApplicationConfig {
+public class ApplicationConfig implements WebMvcConfigurer {
 
 	private final AlunoRepositorio alunoRepositorio;
 	private final CoordenadorRepositorio coordenadorRepositorio;
 	private final ComissaoRepositorio comissaoRepositorio;
 	private final AdministradorRepositorio administradorRepositorio;
+	private final JwtService jwtService;
 
 	@Bean
 	public UserDetailsService userDetailsService() {
@@ -50,6 +54,12 @@ public class ApplicationConfig {
 		return new BCryptPasswordEncoder();
 	}
 
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(new InterceptadorVerficacao(alunoRepositorio, jwtService))
+				.addPathPatterns("/api/requisicao/**", "/api/atividade/**", "/api/certificado/**");
+	}
 	private Usuario findByEmail(String email) {
 		Usuario usuario = null;
 		if (alunoRepositorio.findByEmail(email).isPresent()) {

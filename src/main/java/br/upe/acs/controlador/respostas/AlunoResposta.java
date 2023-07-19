@@ -3,7 +3,6 @@ package br.upe.acs.controlador.respostas;
 import br.upe.acs.dominio.Aluno;
 import br.upe.acs.dominio.Endereco;
 import br.upe.acs.dominio.Requisicao;
-import br.upe.acs.dominio.enums.PerfilEnum;
 import lombok.Getter;
 
 import java.util.List;
@@ -26,8 +25,6 @@ public class AlunoResposta {
 
 	private final String senha;
 
-	private final PerfilEnum perfil;
-
 	private final CursoResposta curso;
 
 	private final int periodo;
@@ -47,7 +44,6 @@ public class AlunoResposta {
 		this.telefone = aluno.getTelefone();
 		this.email = aluno.getEmail();
 		this.senha = aluno.getSenha();
-		this.perfil = aluno.getPerfil();
 		this.curso = new CursoResposta(aluno.getCurso());
 		this.periodo = aluno.getPeriodo();
 		this.matricula = aluno.getMatricula();

@@ -13,6 +13,8 @@ public class CertificadoDTO {
 	
 	private String descricao;
 	
+	private String observacao;
+	
 	private String data;
 	
 	private Integer horas;

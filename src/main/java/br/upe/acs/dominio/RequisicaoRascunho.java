@@ -1,29 +1,24 @@
 package br.upe.acs.dominio;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@EqualsAndHashCode(callSuper = true)
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class RequisicaoRascunho {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    private int semestre;
-
-    private int qtdCertificados;
+public class RequisicaoRascunho extends RequisicaoBase {
 
     private Long usuarioId;
 
     private Long cursoId;
+
+    private Date dataCriacao;
 
     @Temporal(TemporalType.DATE)
     private Date dataExpiracao;
