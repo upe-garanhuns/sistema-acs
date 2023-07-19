@@ -206,7 +206,7 @@ public class RequisicaoCertificadoServico {
         for (int i = 0; i < rascunho.getQtdCertificados(); i++) {
 
             MultipartFile certificadoArquivoSalvar = null;
-            if(rascunho.getCertificadoArquivos().length >= i + 1) {
+            if(rascunho.getCertificadoArquivos() != null && rascunho.getCertificadoArquivos().length >= i + 1) {
                 certificadoArquivoSalvar = rascunho.getCertificadoArquivos()[i];
             }
 

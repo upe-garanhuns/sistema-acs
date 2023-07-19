@@ -106,6 +106,7 @@ public class RequisicaoControlador {
         return resposta;
     }
 
+    @Operation(summary = "Adicionar rascunho de uma requisição com certificados")
     @PostMapping(path = "/rascunho", consumes = {"multipart/form-data"})
     public ResponseEntity<?> adicionarRequisicaoRascunho(@RequestParam(value = "usuarioId") Long usuarioId,
                                                          @RequestParam(value = "cursoId") Long cursoId,
@@ -129,6 +130,7 @@ public class RequisicaoControlador {
             resposta = ResponseEntity.ok().build();
         } catch (Exception e) {
             resposta = ResponseEntity.badRequest().body(e.getMessage());
+            System.out.println(resposta);
         }
 
         return resposta;
