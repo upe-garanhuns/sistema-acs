@@ -130,7 +130,6 @@ public class RequisicaoControlador {
             resposta = ResponseEntity.ok().build();
         } catch (Exception e) {
             resposta = ResponseEntity.badRequest().body(e.getMessage());
-            System.out.println(resposta);
         }
 
         return resposta;
