@@ -87,7 +87,6 @@ public class ControleAcessoServico {
     }
 
 	public void alterarSenha(String token, String senha, String novaSenha) throws AcsExcecao {
-//        TODO
 		validarSenha(novaSenha);
 		String email = jwtService.extractUsername(token);
 		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, senha));

@@ -50,7 +50,6 @@ public class RequisicaoCertificadoServico {
         rascunhoSalvar.setQtdCertificados(requisicaoRascunho.getQtdCertificados());
         rascunhoSalvar.setUsuarioId(requisicaoRascunho.getUsuarioId());
         rascunhoSalvar.setCursoId(requisicaoRascunho.getCursoId());
-        rascunhoSalvar.setObservacao(requisicaoRascunho.getObservacao());
         rascunhoSalvar.setDataExpiracao(null);
 
         RequisicaoRascunho rascunhoSalvo = rascunhoRepositorio.save(rascunhoSalvar);
@@ -69,18 +68,17 @@ public class RequisicaoCertificadoServico {
     
     public void editarRequisicaoRascunho(Long id, String token, RequisicaoRascunhoDTO requisicaoRascunho) throws AcsExcecao, IOException, ParseException{
     	RequisicaoRascunho rascunho = rascunhoServico.buscarRequisicaoRascunhoPorId(id).orElseThrow();
-    	var user = jwtService.extractUsername(token);
-    	var autor = alunoServico.buscarAlunoPorId(rascunho.getUsuarioId()).orElseThrow();
+    	String usuario = jwtService.extractUsername(token);
+    	Aluno autor = alunoServico.buscarAlunoPorId(rascunho.getUsuarioId()).orElseThrow();
     	
-    	if(!Objects.equals(autor.getEmail(), user)) {
+    	if(!Objects.equals(autor.getEmail(), usuario)) {
     		throw new AcsExcecao("Você não possui autorização para editar esse rascunho");
     	}
     	
     	if(!autor.isVerificado()) {
     		throw new AcsExcecao("Sua conta não foi verificada");
     	}
-    	    	
-    //	int qtdTotal = requisicaoRascunho.getQtdCertificados() + rascunho.getQtdCertificados();  
+
     	
     	CertificadosMetadadosDTO certificadosMetadados = converterCertificadosMetadados(requisicaoRascunho.getCertificadosMetadados());
     	rascunho.setCursoId(requisicaoRascunho.getCursoId());
@@ -100,14 +98,11 @@ public class RequisicaoCertificadoServico {
         	rascunhoVO.setCertificados(certificadosRascunho);
         	rascunhoVO.setIdRequisicao(rascunho.getId());
         	rascunhoVO.setQtdCertificados(requisicaoRascunho.getQtdCertificados());       
-        	
-        	adicionarCertificadosRascunho(rascunhoVO);
-        	//rascunho.setQtdCertificados(qtdTotal);    		
-    	}
+
+        	adicionarCertificadosRascunho(rascunhoVO);   		
+    	}	
     	
-    	
-    	
-    
+    	 
     	
     }
 

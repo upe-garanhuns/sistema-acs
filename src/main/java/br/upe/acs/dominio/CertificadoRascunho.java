@@ -4,33 +4,16 @@ import br.upe.acs.dominio.enums.EixoEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Entity
+@EqualsAndHashCode(callSuper = true)
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class CertificadoRascunho {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    private String titulo;
-
-    private String descricao;
-    
-    private String observacao;
-
-    @Temporal(TemporalType.DATE)
-    private Date data;
-
-    private int horas;
-
-    private int chMaxima;
-
-    private byte[] certificadoArquivo;
+public class CertificadoRascunho extends CertificadoBase {
 
     @Enumerated(EnumType.STRING)
     private EixoEnum eixoAtividade;
@@ -39,4 +22,5 @@ public class CertificadoRascunho {
 
     @ManyToOne
     private RequisicaoRascunho requisicaoRascunho;
+
 }

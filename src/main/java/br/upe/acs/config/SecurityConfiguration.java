@@ -34,8 +34,14 @@ public class SecurityConfiguration {
 			)
 			.authenticationProvider(authenticationProvider)
 			.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-			.cors(cors -> cors.disable());
-		
+			.cors(cors -> {
+				try {
+					cors.init(http);
+				} catch (Exception e) {
+					throw new RuntimeException(e);
+				}
+			});
+
 		return http.build();
 	}
 }

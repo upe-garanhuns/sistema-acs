@@ -1,4 +1,4 @@
-package br.upe.acs.ControleAcesso;
+package br.upe.acs.controleAcesso;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
