@@ -111,8 +111,10 @@ public class ControleAcessoServico {
 
 	private void verificarDadosUnicos(String email, String cpf) throws AcsExcecao {
 		String mensagem = "";
-
-		if (alunoRepositorio.findByCpf(cpf).isPresent()) {
+		
+		String cpfFormatado = cpf.replaceAll("[^0-9]", "");
+		
+		if (alunoRepositorio.findByCpf(cpfFormatado).isPresent()) {
 			mensagem += "cpf";
 		}
 

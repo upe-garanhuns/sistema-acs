@@ -17,7 +17,7 @@ public class EnderecoServico {
 	private final EnderecoRepositorio repositorio;
 
 	public Endereco adicionarEndereco(EnderecoDTO enderecoDTO) {
-		Endereco enderecoSalvar = new Endereco();
+		Endereco enderecoSalvar = new Endereco();		
 		enderecoSalvar.setCep(enderecoDTO.getCep());
 		enderecoSalvar.setUF(enderecoDTO.getUF());
 		enderecoSalvar.setCidade(enderecoDTO.getCidade());
@@ -33,10 +33,13 @@ public class EnderecoServico {
 
 		try {
 			viaCepDTO = new RestTemplate().getForEntity(String.format("https://viacep.com.br/ws/%s/json/", cep), ViaCepDTO.class).getBody();
+			assert viaCepDTO != null;
+			if (viaCepDTO.getLogradouro().isEmpty()) {
+				throw new CepInvalidoExcecao("CEP não encontrado!");
+			}
 		} catch (Exception e) {
 			throw new CepInvalidoExcecao("CEP inválido!");
 		}
-
 		return viaCepDTO;
 	}
 }
