@@ -4,6 +4,7 @@ package br.upe.acs.controlador;
 import br.upe.acs.dominio.Aluno;
 import br.upe.acs.dominio.Usuario;
 import br.upe.acs.servico.AlunoServico;
+import br.upe.acs.utils.AcsExcecao;
 import br.upe.acs.utils.EmailUtils;
 import br.upe.acs.utils.RespostaPadrao;
 import br.upe.acs.utils.TokenUtils;
@@ -25,10 +26,8 @@ public class RecuperarSenhaControlador {
 
     @GetMapping("/recuperar-senha")
     public ResponseEntity<RespostaPadrao> recuperarSenha(@RequestParam("email") String email) {
-        Optional<Aluno> alunoOptional = alunoServico.buscarAlunoPorEmail(email);
-
-        if (alunoOptional.isPresent()) {
-            Aluno aluno = alunoOptional.get();
+        try {
+            Aluno aluno = alunoServico.buscarAlunoPorEmail(email);
             String token = TokenUtils.gerarToken();
             LocalDateTime dataExpiracao = LocalDateTime.now().plusMinutes(5);
 
@@ -39,9 +38,9 @@ public class RecuperarSenhaControlador {
             EmailUtils.enviarEmailRecuperacaoSenha(aluno.getEmail(), token);
 
             return ResponseEntity.ok(new RespostaPadrao(token));
+        } catch (AcsExcecao e) {
+            return ResponseEntity.notFound().build();
         }
-
-        return ResponseEntity.notFound().build();
     }
 
     @PostMapping("/recuperar-senha")

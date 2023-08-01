@@ -36,10 +36,6 @@ public class EmailUtils {
 		enviarEmail(email, assunto, corpo);
 	}
 
-	//private static String gerarLinkRecuperacaoSenha(String token) {
-	//   return "http://page/recuperar-senha?token=" + token;
-	//}
-
 	private static void enviarEmail(String emailDestinatario, String assunto, String corpo) {
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
