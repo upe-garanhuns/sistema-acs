@@ -33,4 +33,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f sistema-acs
       - name: Run docker container
-        run: docker run -d -p 8080:8080 --name sistema-acs gabriertlima/sistema-acs
+        run: docker run -d -p 8080:8080 --name sistema-acs gabrielrtlima/sistema-acs
